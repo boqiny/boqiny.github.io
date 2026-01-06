@@ -94,7 +94,7 @@ const AboutSection = () => {
                 <h3 className="font-semibold text-foreground">Interests</h3>
               </div>
               <p className="text-muted-foreground">
-                ML Systems, LLM Applications, Software Engineering
+                Machine Learning, ML Systems, LLM Applications, Software Engineering
               </p>
             </motion.div>
           </div>
