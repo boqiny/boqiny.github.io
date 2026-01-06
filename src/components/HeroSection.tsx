@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
-import { Mail, Github, Linkedin, FileText } from "lucide-react";
+import { Mail, Github, Linkedin, GraduationCap } from "lucide-react";
 import profilePlaceholder from "@/assets/touxiang.jpg";
 
 const socialLinks = [
   { icon: Github, href: "https://github.com/boqiny", label: "GitHub" },
   { icon: Linkedin, href: "https://linkedin.com/in/boqin-yuan", label: "LinkedIn" },
-  { icon: FileText, href: "https://scholar.google.com/citations?user=AglrzBgAAAAJ&hl=en", label: "Scholar" },
+  { icon: GraduationCap, href: "https://scholar.google.com/citations?user=AglrzBgAAAAJ&hl=en", label: "Scholar" },
   { icon: Mail, href: "mailto:b4yuan@ucsd.edu", label: "Email" },
 ];
 

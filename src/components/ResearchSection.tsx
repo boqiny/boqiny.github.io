@@ -1,24 +1,29 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Lightbulb, Brain, Cpu, Code2 } from "lucide-react";
+import { Lightbulb, Brain, Cpu, Code2, Microscope } from "lucide-react";
 
 const researchInterests = [
   {
     icon: Brain,
     title: "Machine Learning",
-    description: "Deep learning, neural networks, and applied ML systems",
+    description: "Vision-Language Models, Supervised fine-tuning, Reinforcement Learning",
   },
   {
     icon: Cpu,
-    title: "Systems",
-    description: "Distributed systems, performance optimization, and infrastructure",
+    title: "ML Systems",
+    description: "Efficient inference, distributed training, and model compression",
   },
   {
     icon: Code2,
     title: "Software Engineering",
-    description: "Scalable architecture, best practices, and clean code",
+    description: "LLM applications, multi-agent systems, and tool-augmented reasoning",
   },
+  {
+    icon: Microscope,
+    title: "AI4Science",
+    description: "AI for healthcare, AI for Earth Science",
+  }
 ];
 
 const ResearchSection = () => {
@@ -40,7 +45,7 @@ const ResearchSection = () => {
           <h2 className="section-heading">Research Interests</h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {researchInterests.map((interest, index) => (
             <motion.div
               key={interest.title}

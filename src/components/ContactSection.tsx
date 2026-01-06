@@ -55,7 +55,7 @@ const ContactSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex items-center justify-center gap-4"
+            className="flex items-center justify-center gap-4 mb-12"
           >
             <a
               href="https://github.com/boqiny"
@@ -74,6 +74,28 @@ const ContactSection = () => {
               aria-label="LinkedIn"
             >
               <Linkedin size={24} />
+            </a>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="flex justify-center"
+          >
+            <a 
+              href="https://clustrmaps.com/site/1c8ww" 
+              title="Visit tracker"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block rounded-xl overflow-hidden card-elevated hover:scale-105 transition-transform"
+            >
+              <img 
+                src="//www.clustrmaps.com/map_v2.png?d=_SZuuAE6cFmYSznUFaOGJ8whoMhwR1rCE-hLZSYJITs&cl=ffffff" 
+                alt="Visitor map"
+                className="max-w-full h-auto"
+                style={{ minWidth: '300px' }}
+              />
             </a>
           </motion.div>
         </motion.div>
