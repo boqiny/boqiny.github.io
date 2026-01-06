@@ -29,8 +29,38 @@ const AboutSection = () => {
           className="max-w-3xl"
         >
           <p className="text-lg text-foreground leading-relaxed mb-6">
-            I'm a Master's student in Computer Science at UC San Diego, exploring the 
+            I'm a Master student in Computer Science at UC San Diego, exploring the 
             intersection of ML systems, LLM applications, and software engineering.
+          </p>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+            I was a full-time Machine Learning Engineer at{" "}
+            <a
+              href="https://www.cambioml.com/en"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline"
+            >
+              CambioML (YC S23)
+            </a>
+            {" "}from 2024-2025 after graduation, working on vision language models (
+            <a
+              href="https://www.cambioml.com/en"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline"
+            >
+              AnyParser
+            </a>
+            ) and Computer Use Agent (CUA) systems (
+            <a
+              href="https://www.energent.ai/en/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline"
+            >
+              Energent.ai
+            </a>
+            ).
           </p>
           <p className="text-lg text-muted-foreground leading-relaxed mb-8">
             Previously studied Mathematics & Computer Science and Statistics at UIUC.
