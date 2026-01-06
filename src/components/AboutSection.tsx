@@ -30,7 +30,7 @@ const AboutSection = () => {
         >
           <p className="text-lg text-foreground leading-relaxed mb-6">
             I'm a Master student in Computer Science at UC San Diego, exploring the 
-            intersection of ML systems, LLM applications, and software engineering.
+            intersection of Machine Learning, ML Systems, LLM applications, and software engineering.
           </p>
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
             I was a full-time Machine Learning Engineer at{" "}
@@ -79,7 +79,7 @@ const AboutSection = () => {
                 <h3 className="font-semibold text-foreground">Looking For</h3>
               </div>
               <p className="text-muted-foreground">
-                Internship opportunities starting Summer 2026
+                Internship opportunities in Summer 2026
               </p>
             </motion.div>
 
