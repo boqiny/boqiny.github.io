@@ -30,7 +30,7 @@ const AboutSection = () => {
         >
           <p className="text-lg text-foreground leading-relaxed mb-6">
             I'm a Master student in Computer Science at UC San Diego, exploring the 
-            intersection of Machine Learning, ML Systems, LLM applications, and software engineering.
+            intersection of Machine Learning and Software Engineering.
           </p>
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
             I was a full-time Machine Learning Engineer at{" "}
@@ -42,7 +42,7 @@ const AboutSection = () => {
             >
               CambioML (YC S23)
             </a>
-            {" "}from 2024-2025 after graduation, working on vision language models (
+            {" "}from 2024-2025, working on vision language models (
             <a
               href="https://www.cambioml.com/en"
               target="_blank"
@@ -64,7 +64,7 @@ const AboutSection = () => {
           </p>
           <p className="text-lg text-muted-foreground leading-relaxed mb-8">
             Previously studied Mathematics & Computer Science and Statistics at UIUC.
-            I enjoy building systems that bridge research and production.
+            I bridge research ideas and production-ready engineering.
           </p>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -94,7 +94,7 @@ const AboutSection = () => {
                 <h3 className="font-semibold text-foreground">Interests</h3>
               </div>
               <p className="text-muted-foreground">
-                Machine Learning, ML Systems, LLM Applications, Software Engineering
+                Machine Learning, Software Engineering, ML Systems, LLM Applications
               </p>
             </motion.div>
           </div>
