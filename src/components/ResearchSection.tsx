@@ -7,25 +7,25 @@ const researchInterests = [
   {
     icon: Brain,
     title: "Machine Learning",
-    description: "Vision-Language Models, Supervised fine-tuning, Reinforcement Learning",
+    description: "Vision-Language Models, Model Training, Reinforcement Learning",
   },
   {
     icon: Cpu,
     title: "ML Systems",
-    description: "Efficient inference, distributed training, and model compression",
+    description: "Efficient Inference, Distributed Training, Model Compression",
   },
   {
     icon: Code2,
     title: "Software Engineering",
-    description: "LLM applications, multi-agent systems, and tool-augmented reasoning",
+    description: "LLM Applications, Agentic Systems, Tool Calling",
   },
   {
     icon: Microscope,
     title: "AI4Science",
-    description: "AI for healthcare, AI for Earth Science",
+    description: "AI for Legal Applications, Health, Earth Science",
   }
 ];
-
+  
 const ResearchSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
