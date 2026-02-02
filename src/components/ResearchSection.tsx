@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Lightbulb, Brain, Cpu, Code2, Microscope } from "lucide-react";
+import { Lightbulb, Brain, Cpu, Code2, Shield } from "lucide-react";
 
 const researchInterests = [
   {
@@ -20,9 +20,9 @@ const researchInterests = [
     description: "LLM Applications, Agentic Systems, Tool Calling",
   },
   {
-    icon: Microscope,
-    title: "AI4Science",
-    description: "AI for Legal Applications, Health, Earth Science",
+    icon: Shield,
+    title: "AI Safety",
+    description: "LLM Jailbreaking, LLM Alignment",
   }
 ];
   
