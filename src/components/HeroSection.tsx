@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Mail, Github, Linkedin, GraduationCap } from "lucide-react";
-import profilePlaceholder from "@/assets/touxiang.jpg";
+import profilePlaceholder from "@/assets/tx_0209.jpg";
 
 const socialLinks = [
   { icon: Github, href: "https://github.com/boqiny", label: "GitHub" },
