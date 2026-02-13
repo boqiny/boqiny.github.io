@@ -8,6 +8,9 @@ const Footer = () => {
         <p className="text-muted-foreground/60 text-xs mt-2">
           Built with React & Tailwind CSS
         </p>
+        <p className="text-muted-foreground/60 text-xs mt-1">
+          Last updated: February 12, 2026
+        </p>
       </div>
     </footer>
   );

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { Mail, Github, Linkedin, GraduationCap } from "lucide-react";
+import { Mail, Github, Linkedin, GraduationCap, FileText } from "lucide-react";
 import profilePlaceholder from "@/assets/tx_0209.jpg";
+import resumePdf from "@/assets/Boqin_Resume.pdf";
 
 const socialLinks = [
   { icon: Github, href: "https://github.com/boqiny", label: "GitHub" },
@@ -59,7 +60,7 @@ const HeroSection = () => {
             </p>
 
             {/* Social Links */}
-            <div className="flex items-center justify-center lg:justify-start gap-4">
+            <div className="flex items-center justify-center lg:justify-start gap-4 mb-6">
               {socialLinks.map((link, index) => (
                 <motion.a
                   key={link.label}
@@ -76,6 +77,20 @@ const HeroSection = () => {
                 </motion.a>
               ))}
             </div>
+
+            {/* Resume Button */}
+            <motion.a
+              href={resumePdf}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.8 }}
+              className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-xl font-medium hover:bg-primary/90 transition-all duration-300 card-elevated hover:shadow-lg"
+            >
+              <FileText size={20} />
+              View Resume
+            </motion.a>
           </motion.div>
         </div>
       </div>
