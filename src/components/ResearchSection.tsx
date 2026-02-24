@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Lightbulb, Brain, Cpu, Code2, Shield } from "lucide-react";
+import { Lightbulb, Brain, Cpu, Code2, Shield, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const researchInterests = [
   {
@@ -64,6 +65,21 @@ const ResearchSection = () => {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="mt-8 text-center"
+        >
+          <Link
+            to="/past-research"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-card rounded-xl card-elevated hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-medium"
+          >
+            Past Research Experience
+            <ArrowRight size={20} />
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

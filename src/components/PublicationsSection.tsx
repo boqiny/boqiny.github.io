@@ -7,7 +7,7 @@ const publications = [
   {
     title: "PRO-V-R1: Reasoning Enhanced Programming Agent for RTL Verification",
     authors: "Yujie Zhao, Zhijing Wu, Boqin Yuan, Zhongming Yu, Hejia Zhang, Wentao Ni, Chia-Tung Ho, Haoxing Ren, Jishen Zhao",
-    venue: "arXiv Preprint, 2025",
+    venue: "DAC, 2026",
     tag: "Co-Author",
     links: {
       paper: "https://arxiv.org/abs/2506.12200",
@@ -17,7 +17,7 @@ const publications = [
     title: "L-MARS: Legal Multi-Agent Workflow with Orchestrated Reasoning and Agentic Search",
     authors: "Ziqi Wang, Boqin Yuan",
     venue: "arXiv Preprint, 2025",
-    tag: "Co-Author",
+    tag: "First Author",
     links: {
       paper: "https://arxiv.org/abs/2509.00761",
     },
