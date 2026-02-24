@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Send, Mail, MapPin, Github, Linkedin } from "lucide-react";
+import { Send, Mail, MapPin } from "lucide-react";
 
 const ContactSection = () => {
   const ref = useRef(null);
@@ -50,32 +50,6 @@ const ContactSection = () => {
               <span className="text-foreground font-medium">San Diego, CA</span>
             </motion.div>
           </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex items-center justify-center gap-4 mb-12"
-          >
-            <a
-              href="https://github.com/boqiny"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-4 bg-background rounded-xl card-elevated hover:bg-primary hover:text-primary-foreground transition-colors"
-              aria-label="GitHub"
-            >
-              <Github size={24} />
-            </a>
-            <a
-              href="https://linkedin.com/in/boqin-yuan"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-4 bg-background rounded-xl card-elevated hover:bg-primary hover:text-primary-foreground transition-colors"
-              aria-label="LinkedIn"
-            >
-              <Linkedin size={24} />
-            </a>
-          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
