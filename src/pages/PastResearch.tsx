@@ -20,6 +20,7 @@ const experiences = [
     location: "Champaign, Illinois, United States",
     description: [
       "Deep learning application for analyzing astrocyte in time series images to detect Alzheimer's disease.",
+      "Under supervision of Professor Xinzhu Yu",
     ],
     links: [
       {
@@ -39,6 +40,7 @@ const experiences = [
       "Researching machine learning and deep learning applications in geospatial and remote sensing.",
       "Applying deep learning to downstream tasks on pre-trained foundation models, focusing on multi-temporal crop classification.",
       "Creating a machine learning model to detect tillage practices throughout Europe.",
+      "Under supervision of Professor Kaiyu Guan and Professor Sheng Wang",
     ],
     links: [
       {
