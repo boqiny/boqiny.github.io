@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import resumePdf from "@/assets/Boqin_Resume.pdf";
 
 const navItems = [
   { label: "About", href: "#about" },
+  { label: "Work", href: "#work-experience" },
   { label: "Research", href: "#research" },
   { label: "Publications", href: "#publications" },
-  { label: "Resume", href: resumePdf, external: true },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -49,8 +48,6 @@ const Navigation = () => {
               <a 
                 href={item.href} 
                 className="nav-link font-medium"
-                target={item.external ? "_blank" : undefined}
-                rel={item.external ? "noopener noreferrer" : undefined}
               >
                 {item.label}
               </a>
@@ -82,8 +79,6 @@ const Navigation = () => {
                 <a
                   href={item.href}
                   className="block py-2 text-foreground hover:text-primary transition-colors font-medium"
-                  target={item.external ? "_blank" : undefined}
-                  rel={item.external ? "noopener noreferrer" : undefined}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.label}
