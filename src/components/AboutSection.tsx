@@ -63,7 +63,7 @@ const AboutSection = () => {
             ).
           </p>
           <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-            Previously studied Mathematics & Computer Science and Statistics at UIUC.
+            Previously studied Mathematics & Computer Science and Statistics at University of Illinois at Urbana-Champaign (UIUC).
             I bridge research ideas and production-ready engineering.
           </p>
 
