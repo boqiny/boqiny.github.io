@@ -5,6 +5,15 @@ import { BookOpen, ExternalLink, FileText, Code } from "lucide-react";
 
 const publications = [
   {
+    title: "AMA-Bench: Evaluating Long-Horizon Memory for Agentic Applications",
+    authors: "Yujie Zhao, Boqin Yuan, Junbo Huang et al.",
+    venue: "arXiv Preprint, 2026",
+    tag: "Co-Author",
+    links: {
+      paper: "https://arxiv.org/abs/2602.22769",
+    },
+  },
+  {
     title: "PRO-V-R1: Reasoning Enhanced Programming Agent for RTL Verification",
     authors: "Yujie Zhao, Zhijing Wu, Boqin Yuan, Zhongming Yu, Hejia Zhang, Wentao Ni, Chia-Tung Ho, Haoxing Ren, Jishen Zhao",
     venue: "DAC, 2026",

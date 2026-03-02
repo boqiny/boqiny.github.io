@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { GraduationCap, Target, Sparkles } from "lucide-react";
+import { GraduationCap, Target, Sparkles, Newspaper, ExternalLink } from "lucide-react";
 
 const AboutSection = () => {
   const ref = useRef(null);
@@ -98,6 +98,28 @@ const AboutSection = () => {
               </p>
             </motion.div>
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="mt-6"
+          >
+            <h4 className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-2">News</h4>
+            <div className="flex items-center gap-3 py-3 px-4 bg-muted/30 rounded-lg">
+              <Newspaper className="w-4 h-4 text-primary flex-shrink-0" />
+              <span className="text-sm text-muted-foreground">Feb 27, 2026</span>
+              <a
+              href="https://arxiv.org/abs/2602.22769"
+              target="_blank"
+              rel="noopener noreferrer"
+                className="text-sm text-foreground hover:text-primary transition-colors inline-flex items-center gap-1"
+              >
+                AMA-Bench for agent trajectory memory released on arXiv
+                <ExternalLink size={12} />
+              </a>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
