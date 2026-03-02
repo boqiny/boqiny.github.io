@@ -106,18 +106,30 @@ const AboutSection = () => {
             className="mt-6"
           >
             <h4 className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-2">News</h4>
-            <div className="flex items-center gap-3 py-3 px-4 bg-muted/30 rounded-lg">
+            <div className="flex flex-wrap items-center gap-3 py-3 px-4 bg-muted/30 rounded-lg">
               <Newspaper className="w-4 h-4 text-primary flex-shrink-0" />
               <span className="text-sm text-muted-foreground">Feb 27, 2026</span>
-              <a
-              href="https://arxiv.org/abs/2602.22769"
-              target="_blank"
-              rel="noopener noreferrer"
-                className="text-sm text-foreground hover:text-primary transition-colors inline-flex items-center gap-1"
-              >
-                AMA-Bench for agent trajectory memory released on arXiv
-                <ExternalLink size={12} />
-              </a>
+              <span className="text-sm text-foreground">
+                AMA-Bench for agent trajectory memory released on{" "}
+                <a
+                  href="https://arxiv.org/abs/2602.22769"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  arXiv
+                </a>
+                .{" "}
+                <a
+                  href="https://ama-bench.github.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline inline-flex items-center gap-1"
+                >
+                  Check out our benchmark
+                  <ExternalLink size={12} />
+                </a>
+              </span>
             </div>
           </motion.div>
         </motion.div>
