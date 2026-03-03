@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Lightbulb, Brain, Cpu, Code2, Shield, ArrowRight } from "lucide-react";
+import { Lightbulb, Brain, Cpu, Database, Shield, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const researchInterests = [
@@ -16,9 +16,9 @@ const researchInterests = [
     description: "Efficient Inference, Distributed Training, Model Compression",
   },
   {
-    icon: Code2,
-    title: "Software Engineering",
-    description: "LLM Applications, Agentic Systems, Tool Calling",
+    icon: Database,
+    title: "Agent Memory",
+    description: "Long-Horizon Memory, Agent Trajectories, Causality Graphs, Agentic RAG",
   },
   {
     icon: Shield,
