@@ -106,30 +106,55 @@ const AboutSection = () => {
             className="mt-6"
           >
             <h4 className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-2">News</h4>
-            <div className="flex flex-wrap items-center gap-3 py-3 px-4 bg-muted/30 rounded-lg">
-              <Newspaper className="w-4 h-4 text-primary flex-shrink-0" />
-              <span className="text-sm text-muted-foreground">Feb 27, 2026</span>
-              <span className="text-sm text-foreground">
-                AMA-Bench for agent trajectory memory released on{" "}
-                <a
-                  href="https://arxiv.org/abs/2602.22769"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary hover:underline"
-                >
-                  arXiv
-                </a>
-                .{" "}
-                <a
-                  href="https://ama-bench.github.io/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary hover:underline inline-flex items-center gap-1"
-                >
-                  Check out our benchmark
-                  <ExternalLink size={12} />
-                </a>
-              </span>
+            <div className="space-y-3">
+              <div className="flex flex-wrap items-center gap-3 py-3 px-4 bg-muted/30 rounded-lg">
+                <Newspaper className="w-4 h-4 text-primary flex-shrink-0" />
+                <span className="text-sm text-muted-foreground">Mar 3, 2026</span>
+                <span className="text-sm text-foreground">
+                  AMA-Bench accepted to ICLR 2026 Workshop MemAgents.{" "}
+                  <a
+                    href="https://ama-bench.github.io/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline inline-flex items-center gap-1"
+                  >
+                    Check out our benchmark
+                    <ExternalLink size={12} />
+                  </a>
+                </span>
+              </div>
+              <div className="flex flex-wrap items-center gap-3 py-3 px-4 bg-muted/30 rounded-lg">
+                <Newspaper className="w-4 h-4 text-primary flex-shrink-0" />
+                <span className="text-sm text-muted-foreground">Mar 3, 2026</span>
+                <span className="text-sm text-foreground">
+                  <em>Diagnosing Retrieval vs. Utilization Bottlenecks in LLM Agent Memory</em> accepted to ICLR 2026 Workshop MemAgents.
+                </span>
+              </div>
+              <div className="flex flex-wrap items-center gap-3 py-3 px-4 bg-muted/30 rounded-lg">
+                <Newspaper className="w-4 h-4 text-primary flex-shrink-0" />
+                <span className="text-sm text-muted-foreground">Feb 27, 2026</span>
+                <span className="text-sm text-foreground">
+                  AMA-Bench for agent trajectory memory released on{" "}
+                  <a
+                    href="https://arxiv.org/abs/2602.22769"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline"
+                  >
+                    arXiv
+                  </a>
+                  .{" "}
+                  <a
+                    href="https://ama-bench.github.io/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline inline-flex items-center gap-1"
+                  >
+                    Check out our benchmark
+                    <ExternalLink size={12} />
+                  </a>
+                </span>
+              </div>
             </div>
           </motion.div>
         </motion.div>
