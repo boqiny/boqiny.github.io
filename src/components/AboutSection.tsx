@@ -98,41 +98,42 @@ const AboutSection = () => {
               </p>
             </motion.div>
           </div>
+        </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="mt-6"
-          >
-            <h4 className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-2">News</h4>
-            <div className="space-y-3">
-              <div className="flex flex-wrap items-center gap-3 py-3 px-4 bg-muted/30 rounded-lg">
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="mt-6 w-full max-w-6xl"
+        >
+          <h4 className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-2">News</h4>
+          <div className="space-y-3">
+            <div className="flex items-center gap-3 py-3 px-4 bg-muted/30 rounded-lg flex-wrap">
                 <Newspaper className="w-4 h-4 text-primary flex-shrink-0" />
-                <span className="text-sm text-muted-foreground">Mar 3, 2026</span>
+                <span className="text-sm text-muted-foreground flex-shrink-0">Mar 3, 2026</span>
                 <span className="text-sm text-foreground">
-                  AMA-Bench accepted to ICLR 2026 Workshop MemAgents.{" "}
                   <a
                     href="https://ama-bench.github.io/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-primary hover:underline inline-flex items-center gap-1"
                   >
-                    Check out our benchmark
+                    AMA-Bench
                     <ExternalLink size={12} />
                   </a>
+                  {" "}accepted to ICLR 2026 Workshop MemAgents.
                 </span>
               </div>
-              <div className="flex flex-wrap items-center gap-3 py-3 px-4 bg-muted/30 rounded-lg">
+              <div className="flex items-center gap-3 py-3 px-4 bg-muted/30 rounded-lg flex-nowrap overflow-x-auto">
                 <Newspaper className="w-4 h-4 text-primary flex-shrink-0" />
-                <span className="text-sm text-muted-foreground">Mar 3, 2026</span>
-                <span className="text-sm text-foreground">
+                <span className="text-sm text-muted-foreground flex-shrink-0">Mar 3, 2026</span>
+                <span className="text-sm text-foreground whitespace-nowrap">
                   <em>Diagnosing Retrieval vs. Utilization Bottlenecks in LLM Agent Memory</em> accepted to ICLR 2026 Workshop MemAgents.
                 </span>
               </div>
-              <div className="flex flex-wrap items-center gap-3 py-3 px-4 bg-muted/30 rounded-lg">
+              <div className="flex items-center gap-3 py-3 px-4 bg-muted/30 rounded-lg flex-wrap">
                 <Newspaper className="w-4 h-4 text-primary flex-shrink-0" />
-                <span className="text-sm text-muted-foreground">Feb 27, 2026</span>
+                <span className="text-sm text-muted-foreground flex-shrink-0">Feb 27, 2026</span>
                 <span className="text-sm text-foreground">
                   AMA-Bench for agent trajectory memory released on{" "}
                   <a
@@ -157,7 +158,6 @@ const AboutSection = () => {
               </div>
             </div>
           </motion.div>
-        </motion.div>
       </div>
     </section>
   );
