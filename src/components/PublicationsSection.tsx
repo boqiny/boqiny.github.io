@@ -7,10 +7,19 @@ const publications = [
   {
     title: "AMA-Bench: Evaluating Long-Horizon Memory for Agentic Applications",
     authors: "Yujie Zhao, Boqin Yuan, Junbo Huang, Haocheng Yuan, Zhongming Yu, Haozhou Xu, Lanxiang Hu, Abhilash Shankarampeta, Zimeng Huang, Wentao Ni, Yuandong Tian, Jishen Zhao",
-    venue: "arXiv Preprint, 2026",
+    venue: "ICLR 2026 Workshop MemAgents",
     tag: "Co-Author",
     links: {
       paper: "https://arxiv.org/abs/2602.22769",
+    },
+  },
+  {
+    title: "Diagnosing Retrieval vs. Utilization Bottlenecks in LLM Agent Memory",
+    authors: "Boqin Yuan, Yue Su, Kun Yao",
+    venue: "ICLR 2026 Workshop MemAgents",
+    tag: "First Author",
+    links: {
+      paper: "https://arxiv.org/abs/2603.02473",
     },
   },
   {

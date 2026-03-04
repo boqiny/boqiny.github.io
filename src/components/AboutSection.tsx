@@ -128,7 +128,15 @@ const AboutSection = () => {
                 <Newspaper className="w-4 h-4 text-primary flex-shrink-0" />
                 <span className="text-sm text-muted-foreground flex-shrink-0">Mar 3, 2026</span>
                 <span className="text-sm text-foreground whitespace-nowrap">
-                  <em>Diagnosing Retrieval vs. Utilization Bottlenecks in LLM Agent Memory</em> accepted to ICLR 2026 Workshop MemAgents.
+                  <a
+                    href="https://arxiv.org/abs/2603.02473"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline"
+                  >
+                    <em>Diagnosing Retrieval vs. Utilization Bottlenecks in LLM Agent Memory</em>
+                  </a>
+                  {" "}accepted to ICLR 2026 Workshop MemAgents.
                 </span>
               </div>
               <div className="flex items-center gap-3 py-3 px-4 bg-muted/30 rounded-lg flex-wrap">
