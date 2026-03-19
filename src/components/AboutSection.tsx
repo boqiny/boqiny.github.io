@@ -1,18 +1,18 @@
 import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { GraduationCap, Target, Sparkles, Newspaper, ExternalLink } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const AboutSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { isVisible } = useScrollAnimation(ref);
 
   return (
     <section id="about" className="py-24 bg-background">
       <div className="container mx-auto px-6" ref={ref}>
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          initial={false}
+          animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
           transition={{ duration: 0.6 }}
           className="flex items-center gap-3 mb-8"
         >
@@ -23,8 +23,8 @@ const AboutSection = () => {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          initial={false}
+          animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
           transition={{ duration: 0.6, delay: 0.1 }}
           className="max-w-3xl"
         >
@@ -69,8 +69,8 @@ const AboutSection = () => {
 
           <div className="grid md:grid-cols-2 gap-6">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              initial={false}
+              animate={{ opacity: isVisible ? 1 : 0, x: isVisible ? 0 : -20 }}
               transition={{ duration: 0.5, delay: 0.3 }}
               className="p-6 bg-card rounded-xl card-elevated"
             >
@@ -84,8 +84,8 @@ const AboutSection = () => {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              initial={false}
+              animate={{ opacity: isVisible ? 1 : 0, x: isVisible ? 0 : 20 }}
               transition={{ duration: 0.5, delay: 0.4 }}
               className="p-6 bg-card rounded-xl card-elevated"
             >
@@ -101,8 +101,8 @@ const AboutSection = () => {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          initial={false}
+          animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 10 }}
           transition={{ duration: 0.5, delay: 0.5 }}
           className="mt-6 w-full max-w-6xl"
         >

@@ -1,18 +1,18 @@
 import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Send, Mail, MapPin } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const ContactSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { isVisible } = useScrollAnimation(ref);
 
   return (
     <section id="contact" className="py-24 bg-card/50">
       <div className="container mx-auto px-6" ref={ref}>
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          initial={false}
+          animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
           transition={{ duration: 0.6 }}
           className="text-center max-w-2xl mx-auto"
         >
@@ -31,8 +31,8 @@ const ContactSection = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12">
             <motion.a
               href="mailto:b4yuan@ucsd.edu"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              initial={false}
+              animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               className="flex items-center gap-3 px-6 py-4 bg-background rounded-xl card-elevated hover:bg-primary hover:text-primary-foreground transition-colors group"
             >
@@ -41,8 +41,8 @@ const ContactSection = () => {
             </motion.a>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              initial={false}
+              animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
               transition={{ duration: 0.5, delay: 0.3 }}
               className="flex items-center gap-3 px-6 py-4 bg-background rounded-xl card-elevated"
             >
@@ -52,8 +52,8 @@ const ContactSection = () => {
           </div>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            initial={false}
+            animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
             transition={{ duration: 0.5, delay: 0.5 }}
             className="flex justify-center"
           >
