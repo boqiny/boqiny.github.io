@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
 import { useRef, useEffect } from "react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useLocation } from "react-router-dom";
 import { ArrowLeft, MapPin, Calendar, Briefcase, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -57,7 +57,7 @@ const experiences = [
 
 const WorkExperience = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { isVisible } = useScrollAnimation(ref);
   const location = useLocation();
 
   useEffect(() => {
@@ -108,8 +108,8 @@ const WorkExperience = () => {
               <motion.div
                 key={exp.id}
                 id={exp.id}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                initial={false}
+                animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
                 transition={{ duration: 0.5, delay: 0.1 + index * 0.2 }}
                 className="bg-card rounded-xl card-elevated p-8 scroll-mt-28"
               >

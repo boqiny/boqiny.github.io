@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { ArrowLeft, MapPin, Calendar, Briefcase, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
@@ -75,7 +75,7 @@ const experiences = [
 
 const PastResearch = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { isVisible } = useScrollAnimation(ref);
 
   return (
     <div className="min-h-screen bg-background">
@@ -110,8 +110,8 @@ const PastResearch = () => {
             {experiences.map((exp, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                initial={false}
+                animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
                 transition={{ duration: 0.5, delay: 0.1 + index * 0.2 }}
                 className="bg-card rounded-xl card-elevated p-8"
               >

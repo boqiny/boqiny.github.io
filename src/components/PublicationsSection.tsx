@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { BookOpen, ExternalLink, FileText, Code } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const publications = [
   {
@@ -53,14 +53,14 @@ const publications = [
 
 const PublicationsSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { isVisible } = useScrollAnimation(ref);
 
   return (
     <section id="publications" className="py-24 bg-background">
       <div className="container mx-auto px-6" ref={ref}>
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          initial={false}
+          animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
           transition={{ duration: 0.6 }}
           className="flex items-center gap-3 mb-8"
         >
@@ -74,8 +74,8 @@ const PublicationsSection = () => {
           {publications.map((pub, index) => (
             <motion.article
               key={pub.title}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              initial={false}
+              animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
               transition={{ duration: 0.5, delay: 0.1 + index * 0.1 }}
               className="p-6 bg-card rounded-xl card-elevated group"
             >
@@ -131,8 +131,8 @@ const PublicationsSection = () => {
         </div>
 
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
+          initial={false}
+          animate={{ opacity: isVisible ? 1 : 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
           className="mt-8 text-center"
         >
