@@ -110,6 +110,22 @@ const AboutSection = () => {
           <div className="space-y-3">
             <div className="flex items-center gap-3 py-3 px-4 bg-muted/30 rounded-lg flex-wrap">
                 <Newspaper className="w-4 h-4 text-primary flex-shrink-0" />
+                <span className="text-sm text-muted-foreground flex-shrink-0">Mar 30, 2026</span>
+                <span className="text-sm text-foreground">
+                  <a
+                    href="https://arxiv.org/abs/2509.00761"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline inline-flex items-center gap-1"
+                  >
+                    L-MARS
+                    <ExternalLink size={12} />
+                  </a>
+                  {" "}v3 released on arXiv — updated LegalSearchQA benchmark results (96.0% accuracy) and new Bar Exam QA evaluation.
+                </span>
+              </div>
+            <div className="flex items-center gap-3 py-3 px-4 bg-muted/30 rounded-lg flex-wrap">
+                <Newspaper className="w-4 h-4 text-primary flex-shrink-0" />
                 <span className="text-sm text-muted-foreground flex-shrink-0">Mar 3, 2026</span>
                 <span className="text-sm text-foreground">
                   <a
