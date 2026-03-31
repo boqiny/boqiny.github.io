@@ -107,7 +107,7 @@ const AboutSection = () => {
           className="mt-6 w-full max-w-6xl"
         >
           <h4 className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-2">News</h4>
-          <div className="space-y-3">
+          <div className="space-y-3 max-h-40 overflow-y-auto pr-2">
             <div className="flex items-center gap-3 py-3 px-4 bg-muted/30 rounded-lg flex-wrap">
                 <Newspaper className="w-4 h-4 text-primary flex-shrink-0" />
                 <span className="text-sm text-muted-foreground flex-shrink-0">Mar 30, 2026</span>
@@ -121,7 +121,7 @@ const AboutSection = () => {
                     L-MARS
                     <ExternalLink size={12} />
                   </a>
-                  {" "}v3 released on arXiv — updated LegalSearchQA benchmark results (96.0% accuracy) and new Bar Exam QA evaluation.
+                  {" "}v2 updated on arXiv
                 </span>
               </div>
             <div className="flex items-center gap-3 py-3 px-4 bg-muted/30 rounded-lg flex-wrap">
