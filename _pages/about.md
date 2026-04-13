@@ -30,6 +30,4 @@ I was a full-time Machine Learning Engineer at [CambioML (YC S23)](https://www.c
 
 Previously studied Mathematics & Computer Science and Statistics at University of Illinois at Urbana-Champaign (UIUC). I bridge research ideas and production-ready engineering.
 
-**Looking for:** Internship opportunities in Summer 2026
-
 **Research Interests:** Machine Learning, Software Engineering, ML Systems, LLM Applications, Agent Memory, AI Safety
