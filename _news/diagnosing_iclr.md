@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-*[Diagnosing Retrieval vs. Utilization Bottlenecks in LLM Agent Memory](https://arxiv.org/abs/2603.02473)* accepted to **ICLR 2026 Workshop MemAgents**.
+*[Diagnosing Retrieval vs. Utilization Bottlenecks](https://arxiv.org/abs/2603.02473)* accepted to **ICLR 2026 MemAgents**.
