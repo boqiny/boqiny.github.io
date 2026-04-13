@@ -5,7 +5,7 @@
 @use "variables" as v;
 
 .publications {
-  margin-top: 2rem;
+  margin-top: 1rem;
 
   h1 {
     color: var(--global-theme-color);
@@ -41,6 +41,9 @@
 
       .preview {
         display: inline-block;
+        width: 100%;
+        aspect-ratio: 3 / 2;
+        object-fit: cover;
       }
 
       .abbr {
