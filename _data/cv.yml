@@ -1,0 +1,117 @@
+cv:
+  name: Boqin Yuan
+  label: MSCS Student
+  email: b4yuan@ucsd.edu
+  location: San Diego, CA
+  image: ""
+  summary: Master student in Computer Science at UC San Diego. Research in ML systems, LLM applications, and agent memory.
+
+  social_networks:
+    - network: GitHub
+      username: boqiny
+    - network: LinkedIn
+      username: boqin-yuan
+
+  sections:
+    Education:
+      - institution: University of California San Diego
+        location: San Diego, CA
+        url: https://ucsd.edu
+        area: Computer Science
+        studyType: M.S.
+        start_date: 2025
+        end_date: present
+
+      - institution: University of Illinois Urbana-Champaign
+        location: Champaign, IL
+        url: https://illinois.edu
+        area: Mathematics & Computer Science, Statistics
+        studyType: B.S.
+        start_date: 2020
+        end_date: 2024
+
+    Experience:
+      - company: CambioML (YC S23)
+        position: Machine Learning Engineer
+        location: San Jose, CA
+        url: https://www.cambioml.com/en
+        start_date: 2024-07
+        end_date: 2025-07
+        summary: Full-time
+        highlights:
+          - "Engineered and productionized AnyParser, a fine-tuned 1B & 2B vision-language model for parsing PDFs into structured Markdown. Fully fine-tuned and post-aligned with preference data to improve robustness, achieving higher accuracy than GPT-4 baselines. Optimized inference with SGLang, delivering 8x throughput on L4 GPUs. Deployed as a SaaS on AWS using ECS + Lambda."
+          - "Orchestrated the design and deployment of Energent.ai, a computer-use agent (CUA) sandbox powered by Claude that autonomously executes diverse desktop tasks. Engineered a multi-agent system with orchestration, long-term memory persistence, and state management. Leveraged Kubernetes to provision isolated per-user sandbox VM sessions, scaling to support 1000+ users worldwide."
+
+      - company: Inspur Group
+        position: Machine Learning Engineer Intern
+        location: Jinan, China
+        start_date: 2023-05
+        end_date: 2023-08
+        summary: Internship
+        highlights:
+          - "Constructed and annotated a custom volleyball dataset and trained YOLOv7-based object detection models for real-time AI fitness assessment. Implemented and optimized YOLO Pose keypoint detection for athletic movement analysis, and accelerated inference with TensorRT, reducing latency while maintaining high accuracy."
+
+      - company: Illinois Leadership Center
+        position: Data Analyst
+        location: Illinois, United States
+        url: https://leadership.illinois.edu/
+        start_date: 2022-08
+        end_date: 2023-05
+        summary: Part-time
+        highlights:
+          - "Analyzed data weekly from leadership surveys, created data visualizations and reports, and helped facilitate leadership and communication workshops."
+
+    Research:
+      - company: Yu Lab, University of Illinois Urbana-Champaign
+        position: Research Assistant
+        location: Champaign, IL
+        url: https://yu-lab.org/
+        start_date: 2023-08
+        end_date: 2024-07
+        summary: Part-time, under supervision of Professor Xinzhu Yu
+        highlights:
+          - "Deep learning application for analyzing astrocyte in time series images to detect Alzheimer's disease."
+
+      - company: National Center for Supercomputing Applications (NCSA)
+        position: NCSA SPIN
+        location: Champaign, IL
+        url: https://www.ncsa.illinois.edu/about/
+        start_date: 2023-08
+        end_date: 2024-05
+        summary: Part-time, under supervision of Professor Kaiyu Guan and Professor Sheng Wang
+        highlights:
+          - "Researching machine learning and deep learning applications in geospatial and remote sensing."
+          - "Applying deep learning to downstream tasks on pre-trained foundation models, focusing on multi-temporal crop classification."
+          - "Creating a machine learning model to detect tillage practices throughout Europe."
+
+      - company: Illinois Geometry Lab
+        position: Research Assistant
+        location: Champaign, IL
+        url: https://iml.math.illinois.edu/
+        start_date: 2022-01
+        end_date: 2022-05
+        summary: Part-time, under supervision of Professor Felix Leditzky
+        highlights:
+          - "Quantum Capacity Bounds and Semidefinite Programming."
+
+    Skills:
+      - name: Machine Learning
+        icon: fa-solid fa-brain
+        keywords: "Vision-Language Models, Model Training, Reinforcement Learning"
+
+      - name: ML Systems
+        icon: fa-solid fa-microchip
+        keywords: "Efficient Inference, Distributed Training, Model Compression"
+
+      - name: Agent Memory
+        icon: fa-solid fa-database
+        keywords: "Long-Horizon Memory, Agent Trajectories, Causality Graphs, Agentic RAG"
+
+      - name: AI Safety
+        icon: fa-solid fa-shield
+        keywords: "LLM Jailbreaking, LLM Alignment"
+
+    Interests:
+      - name: Machine Learning
+        icon: fa-solid fa-brain
+        keywords: "Vision-Language Models, Model Training, Reinforcement Learning, ML Systems, LLM Applications"
