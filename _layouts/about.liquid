@@ -40,10 +40,32 @@ layout: default
 
     <div class="clearfix">{{ content }}</div>
 
+    <!-- Social -->
+    {% if page.social %}
+      {% assign s = site.data.socials %}
+      <div class="social-links" style="margin: 0.6rem 0 1.4rem; display: flex; flex-wrap: wrap; gap: 0.2rem 0;">
+        {% if s.email %}
+          <a href="mailto:{{ s.email }}" style="font-size: 0.85rem; padding: 0.25rem 0.6rem; border-radius: 4px; text-decoration: none; opacity: 0.75; transition: opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.75'">email</a><span style="opacity: 0.3; padding: 0 0.1rem;">/</span>
+        {% endif %}
+        {% if s.github_username %}
+          <a href="https://github.com/{{ s.github_username }}" target="_blank" style="font-size: 0.85rem; padding: 0.25rem 0.6rem; border-radius: 4px; text-decoration: none; opacity: 0.75; transition: opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.75'">github</a><span style="opacity: 0.3; padding: 0 0.1rem;">/</span>
+        {% endif %}
+        {% if s.linkedin_username %}
+          <a href="https://linkedin.com/in/{{ s.linkedin_username }}" target="_blank" style="font-size: 0.85rem; padding: 0.25rem 0.6rem; border-radius: 4px; text-decoration: none; opacity: 0.75; transition: opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.75'">linkedin</a><span style="opacity: 0.3; padding: 0 0.1rem;">/</span>
+        {% endif %}
+        {% if s.scholar_userid %}
+          <a href="https://scholar.google.com/citations?user={{ s.scholar_userid }}" target="_blank" style="font-size: 0.85rem; padding: 0.25rem 0.6rem; border-radius: 4px; text-decoration: none; opacity: 0.75; transition: opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.75'">google scholar</a><span style="opacity: 0.3; padding: 0 0.1rem;">/</span>
+        {% endif %}
+        {% if s.cv_pdf %}
+          <a href="{{ s.cv_pdf | relative_url }}" target="_blank" style="font-size: 0.85rem; padding: 0.25rem 0.6rem; border-radius: 4px; text-decoration: none; opacity: 0.75; transition: opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.75'">cv</a>
+        {% endif %}
+      </div>
+    {% endif %}
+
     <!-- News -->
     {% if page.announcements and page.announcements.enabled %}
       <h2>
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
+        <a href="{{ '/news/' | relative_url }}" style="color: inherit">News</a>
       </h2>
       {% include news.liquid limit=true %}
     {% endif %}
@@ -51,7 +73,7 @@ layout: default
     <!-- Latest posts -->
     {% if page.latest_posts and page.latest_posts.enabled %}
       <h2>
-        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>
+        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">Latest Posts</a>
       </h2>
       {% include latest_posts.liquid %}
     {% endif %}
@@ -59,18 +81,9 @@ layout: default
     <!-- Selected papers -->
     {% if page.selected_papers %}
       <h2>
-        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
+        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Selected Publications</a>
       </h2>
       {% include selected_papers.liquid %}
-    {% endif %}
-
-    <!-- Social -->
-    {% if page.social %}
-      <div class="social">
-        <div class="contact-icons">{% social_links %}</div>
-
-        <div class="contact-note">{{ site.contact_note }}</div>
-      </div>
     {% endif %}
 
     {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
