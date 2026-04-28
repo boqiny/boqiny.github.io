@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-ClawTrace: Cost-Aware Tracing for LLM Agent Skill Distillation released on arXiv. Check out the [website](https://www.clawtrace.ai/) and [code](https://github.com/epsilla-cloud/clawtrace)!
+[ClawTrace](https://arxiv.org/abs/2604.23853): Cost-Aware Tracing for LLM Agent Skill Distillation released on arXiv. Check out the [website](https://www.clawtrace.ai/) and [code](https://github.com/epsilla-cloud/clawtrace)!
