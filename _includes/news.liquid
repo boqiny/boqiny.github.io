@@ -1,13 +1,13 @@
-<div class="news">
+<div class="news" style="margin-bottom: 2rem;">
   {% if site.news != blank %}
     {% assign news_size = site.news | size %}
     <div
       class="table-responsive"
       {% if page.announcements.scrollable and news_size > 3 %}
-        style="max-height: 12em; overflow-y: auto;"
+        style="max-height: 9.6em; overflow-y: auto; border: 1px solid #e0e0e0; border-radius: 6px; padding: 0.25rem 0.5rem;"
       {% endif %}
     >
-      <table class="table table-sm table-borderless">
+      <table class="table table-sm table-borderless" style="margin-bottom: 0;">
         {% assign news = site.news | reverse %}
         {% if include.limit and page.announcements.limit %}
           {% assign news_limit = page.announcements.limit %}
@@ -16,7 +16,7 @@
         {% endif %}
         {% for item in news limit: news_limit %}
           <tr>
-            <th scope="row" style="width: 20%">{{ item.date | date: '%b %d, %Y' }}</th>
+            <th scope="row" style="width: 20%; white-space: nowrap;">{{ item.date | date: '%b %d, %Y' }}</th>
             <td>
               {% if item.inline %}
                 {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
