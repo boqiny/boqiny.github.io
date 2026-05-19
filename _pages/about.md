@@ -25,6 +25,8 @@ latest_posts:
 
 I'm a Master student in Computer Science at UC San Diego, exploring the intersection of Machine Learning and Software Engineering. At UCSD, I work with STABLE Lab ([Prof. Jishen Zhao](https://cseweb.ucsd.edu/~jzhao/)) on AI Agent and ML systems research.
 
+This summer, I'm joining [Moody's Analytics](https://www.moodys.com/) in San Francisco as an **SDE Intern (AI Agent)** on the Banking team, building and evaluating AI agents for financial services.
+
 I was a full-time Machine Learning Engineer at [CambioML (YC S23)](https://www.cambioml.com/en) from 2024-2025, working on vision language models ([AnyParser](https://www.cambioml.com/en)) and Computer Use Agent (CUA) systems ([Energent.ai](http://Energent.ai)).
 
 Previously studied Mathematics & Computer Science and Statistics at University of Illinois at Urbana-Champaign (UIUC). I bridge research ideas and production-ready engineering.
