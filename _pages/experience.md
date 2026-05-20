@@ -106,7 +106,7 @@ nav_order: 1
 <div class="exp-list">
 
   <div class="exp-item">
-    <div class="exp-logo"><div class="exp-logo-placeholder">M</div></div>
+    <div class="exp-logo"><img src="{{ '/assets/img/logos/moodys_icon.png' | relative_url }}" alt="Moody's Analytics"></div>
     <div class="exp-body">
       <div class="exp-header">
         <p class="exp-role">SDE Intern (AI Agent)</p>
