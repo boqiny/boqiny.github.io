@@ -31,7 +31,7 @@ I was a full-time Machine Learning Engineer at [CambioML (YC S23)](https://www.c
 
 Previously studied Mathematics & Computer Science and Statistics at University of Illinois at Urbana-Champaign (UIUC). I bridge research ideas and production-ready engineering.
 
-**Research Interests:** **Machine Learning**, **ML Systems**, **AI Agent**, **Reinforcement Learning**, **AI Safety**
+**Research Interests:** **Machine Learning**, **AI Agent**, **ML Systems**, **AI Evaluation**, **Reinforcement Learning**
 
 <div style="display:flex; flex-wrap:wrap; gap:0.6rem 1.4rem; margin-top:0.5rem; font-size:1rem;">
   <a href="mailto:b4yuan@ucsd.edu" style="display:flex; align-items:center; gap:0.4rem; text-decoration:none; opacity:0.8;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'"><i class="fa-solid fa-envelope"></i> Email</a>
