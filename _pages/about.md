@@ -23,7 +23,9 @@ latest_posts:
   enabled: false
 ---
 
-I'm a Master student in Computer Science at UC San Diego, exploring the intersection of Machine Learning and Software Engineering. At UCSD, I work with STABLE Lab ([Prof. Jishen Zhao](https://cseweb.ucsd.edu/~jzhao/)) on AI Agent and ML systems research.
+I'm a Master student in Computer Science at UC San Diego, exploring the intersection of Machine Learning and Software Engineering. At UCSD, I work with STABLE Lab ([Prof. Jishen Zhao](https://cseweb.ucsd.edu/~jzhao/)) on AI Agent and ML systems research. My work has been accepted at top venues including **ICML**, **DAC**, and **ICLR** workshops, spanning AI agents, ML systems, and agent evaluation.
+
+I'm an enthusiastic open-source contributor to AI evaluation benchmarks. I'm an active contributor to the [Harbor](https://github.com/harbor-framework/terminal-bench) adapter for [Terminal-Bench](https://www.tbench.ai/), and a co-author of [SkillsBench](https://arxiv.org/abs/2602.12670) and [Agents' Last Exam](https://arxiv.org/abs/2606.05405), community benchmarks that measure how well LLM agents handle real, expertise-heavy work.
 
 This summer, I'm joining [Moody's Analytics](https://www.moodys.com/) in San Francisco as an **SDE Intern (AI Agent)** on the Banking team, building and evaluating AI agents for financial services.
 
