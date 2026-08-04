@@ -1,0 +1,76 @@
+# Boqin Yuan
+
+> Machine learning engineer working across the LLM stack: AI agent development and evaluation,
+> model training and alignment, and ML systems and inference optimization. MS Computer Science at
+> UC San Diego. Previously a full-time ML engineer at CambioML (YC S23).
+> Graduating December 2026. Available for full-time roles from January 2027.
+
+Contact: b4yuan@ucsd.edu
+Site: https://boqiny.github.io
+GitHub: https://github.com/boqiny
+LinkedIn: https://linkedin.com/in/boqin-yuan
+Google Scholar: https://scholar.google.com/citations?user=AglrzBgAAAAJ
+
+## Focus areas
+
+- **Agent evaluation and benchmarks.** Co-author of SkillsBench and Agents' Last Exam, community
+  benchmarks measuring how well LLM agents handle real, expertise-heavy work. Authored a merged
+  adapter (PR #1635) in Harbor, the 3.7k-star agent-evaluation framework used by Terminal-Bench:
+  https://github.com/harbor-framework/harbor/pull/1635
+- **Agent memory.** Co-author of AMA-Bench (ICML 2026), an evaluation framework for long-horizon
+  memory in agentic applications. First author of memory-probe (ICLR 2026 workshop), which separates
+  retrieval failures from utilization failures in agent memory.
+- **Model training and alignment.** Trained and productionized AnyParser, a 1B/2B vision-language
+  model for parsing PDFs into structured Markdown, using full fine-tuning plus preference alignment
+  to beat GPT-4 baselines on parsing accuracy.
+- **ML systems and inference.** Achieved 8x inference throughput on L4 GPUs with SGLang, deployed on
+  AWS (ECS + Lambda), with per-user Kubernetes-isolated sandbox sessions serving over 1,000 users.
+
+## Experience
+
+- **Moody's Analytics** (Jun 2026 - Aug 2026, San Francisco): SDE Intern - AI Agent (internship).
+  Work on agent evaluation and knowledge iteration for Moody's banking decision-intelligence agent:
+  injecting domain knowledge through skills, then measuring and optimizing against Langfuse traces,
+  inside a LangGraph orchestration on AWS.
+- **CambioML (YC S23)** (Jul 2024 - Jul 2025, San Jose): Machine Learning Engineer, full-time.
+  Built AnyParser (vision-language model, fine-tuning and preference alignment, SGLang serving) and
+  led Energent.ai, a Claude-powered computer-use agent platform scaled past 1,000 users.
+- **Inspur Group** (May 2023 - Aug 2023): ML Engineer Intern. YOLOv7 detection and pose estimation,
+  TensorRT inference acceleration.
+- **UC San Diego, STABLE Lab** (2025 - present): MS Computer Science, agent memory and ML systems
+  research with Prof. Jishen Zhao.
+- **UIUC, Supercomputing System and AI Lab (SSAIL)** (Oct 2024 - Mar 2025): Research Assistant with
+  Prof. Minjia Zhang. Extended DeepSpeed-Chat, which shipped with PPO only, to preference-based
+  post-training: a DPO trainer (reference-policy log-ratios, adaptive KL control) and a best-of-N
+  rejection-sampling variant, on DeepSpeed's hybrid engine and ZeRO. Code: https://github.com/boqiny/deepspeed-chat
+- **UIUC** (2020 - 2024): BS Mathematics & Computer Science, and Statistics. Research at NCSA and
+  the Illinois Geometry Lab.
+
+## Selected publications
+
+- AMA-Bench: Evaluating Long-Horizon Memory for Agentic Applications. ICML 2026.
+  https://arxiv.org/abs/2602.22769
+- PRO-V-R1: Reasoning Enhanced Programming Agent for RTL Verification. DAC 2026.
+  https://arxiv.org/abs/2506.12200
+- Diagnosing Retrieval vs. Utilization Bottlenecks in LLM Agent Memory. ICLR 2026 Workshop MemAgents.
+  https://arxiv.org/abs/2603.02473
+- ClawTrace: Cost-Aware Tracing for LLM Agent Skill Distillation. ACM CAIS 2026 Workshop (Oral).
+  https://arxiv.org/abs/2604.23853
+- SkillsBench: Benchmarking How Well Agent Skills Work Across Diverse Tasks.
+  https://arxiv.org/abs/2602.12670
+- Agents' Last Exam. https://arxiv.org/abs/2606.05405
+- L-MARS: Legal Multi-Agent System with Agentic Search and Citation-Faithfulness Audit. ICML 2026
+  Workshop AI4Law. https://arxiv.org/abs/2509.00761
+
+## Technologies
+
+PyTorch, SGLang, TensorRT, Kubernetes, AWS (ECS, Lambda), fine-tuning, preference alignment,
+distributed training, inference optimization, agent evaluation and benchmarking, vision-language
+models, reinforcement learning.
+
+## Pages
+
+- About: https://boqiny.github.io/
+- Experience: https://boqiny.github.io/experience/
+- Publications: https://boqiny.github.io/publications/
+- Resume (PDF): https://boqiny.github.io/assets/pdf/Boqin_Resume.pdf

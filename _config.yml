@@ -7,12 +7,14 @@ first_name: Boqin
 middle_name:
 last_name: Yuan
 contact_note:
-description: >
-  Boqin Yuan - MSCS student at UC San Diego. Research in machine learning, ML systems, and LLM applications.
+description: >-
+  Boqin Yuan works across the LLM stack: AI agent development and evaluation, model training and
+  alignment, and ML systems and inference optimization. MS CS at UC San Diego, previously ML engineer
+  at CambioML (YC S23). Looking for full-time roles starting 2027.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-keywords: Boqin Yuan, UCSD, Computer Science, Machine Learning, ML Systems, LLM, AI
+keywords: Boqin Yuan, LLM agents, agent evaluation, benchmark, agent memory, model training, preference alignment, ML systems, inference optimization, SGLang, machine learning engineer, UCSD
 lang: en
 icon: # leave blank for default
 

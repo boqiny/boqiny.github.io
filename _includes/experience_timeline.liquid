@@ -1,0 +1,329 @@
+<style>
+  .tl {
+    margin-top: 1.25rem;
+  }
+  .tl-item {
+    display: grid;
+    grid-template-columns: 88px 24px 80px 1fr;
+    align-items: start;
+  }
+  .tl-date {
+    text-align: right;
+    padding: 0.3rem 0.75rem 0 0;
+    font-size: 0.82rem;
+    line-height: 1.4;
+    opacity: 0.6;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+  /* Rail cell stretches the full row height so consecutive rows form one
+     continuous line. */
+  .tl-rail {
+    position: relative;
+    align-self: stretch;
+    min-height: 100%;
+  }
+  .tl-rail::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    transform: translateX(-50%);
+    background: var(--global-divider-color, rgba(0, 0, 0, 0.12));
+  }
+  /* Last entry: stop the line at its dot instead of trailing off. */
+  .tl-item:last-child .tl-rail::before {
+    bottom: auto;
+    height: 0.85rem;
+  }
+  .tl-dot {
+    position: absolute;
+    left: 50%;
+    top: 0.55rem;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    background: var(--global-text-color-light, #828282);
+  }
+  /* Ongoing role: green marker conveys real state, not decoration. */
+  .tl-item--current .tl-dot {
+    background: #16a34a;
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.18);
+  }
+  .tl-item--current .tl-date {
+    color: #15803d;
+    opacity: 1;
+    font-weight: 600;
+  }
+  html[data-theme="dark"] .tl-item--current .tl-dot {
+    background: #22c55e;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.22);
+  }
+  html[data-theme="dark"] .tl-item--current .tl-date {
+    color: #4ade80;
+  }
+  .tl-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .tl-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 6px;
+  }
+  .tl-body {
+    padding: 0 0 2.2rem 1.15rem;
+    min-width: 0;
+  }
+  .tl-item:last-child .tl-body {
+    padding-bottom: 0.5rem;
+  }
+  .tl-role {
+    font-size: 1.02rem;
+    font-weight: 600;
+    margin: 0.1rem 0 0.1rem;
+  }
+  .tl-company {
+    font-size: 0.93rem;
+    margin: 0 0 0.15rem;
+    opacity: 0.85;
+  }
+  .tl-company a {
+    text-decoration: none;
+  }
+  .tl-company a:hover {
+    text-decoration: underline;
+  }
+  .tl-meta {
+    font-size: 0.82rem;
+    opacity: 0.6;
+    margin: 0 0 0.45rem;
+  }
+  .tl-desc {
+    font-size: 0.92rem;
+    line-height: 1.58;
+    margin: 0;
+    opacity: 0.92;
+  }
+  /* UCSD ships a navy-on-transparent wordmark; invert it onto a navy tile so it
+     reads as the white-on-navy mark used on their official profiles. */
+  .tl-logo--ucsd {
+    background: #182b49;
+    border-color: #182b49;
+  }
+  .tl-logo--ucsd img {
+    filter: brightness(0) invert(1);
+    padding: 13px 10px;
+  }
+  .tl-pubs-label {
+    font-size: 0.82rem;
+    opacity: 0.6;
+    margin: 0.6rem 0 0.15rem;
+  }
+  .tl-pubs {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.86rem;
+    line-height: 1.5;
+  }
+  .tl-pubs li {
+    position: relative;
+    padding-left: 0.85rem;
+    margin-bottom: 0.25rem;
+    opacity: 0.9;
+  }
+  .tl-pubs li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--global-text-color-light, #828282);
+  }
+  .tl-pubs .tl-venue {
+    opacity: 0.65;
+  }
+  .tl-section-title {
+    margin-top: 2.25rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    border-bottom: 1px solid var(--global-divider-color, rgba(0, 0, 0, 0.08));
+    padding-bottom: 0.35rem;
+  }
+
+  @media (max-width: 640px) {
+    .tl-item {
+      grid-template-columns: 56px 1fr;
+    }
+    .tl-date {
+      grid-column: 1 / -1;
+      text-align: left;
+      padding: 0 0 0.4rem;
+      opacity: 0.7;
+    }
+    .tl-rail {
+      display: none;
+    }
+    .tl-logo {
+      width: 56px;
+      height: 56px;
+    }
+    .tl-body {
+      padding: 0 0 1.75rem 0.9rem;
+    }
+  }
+</style>
+
+<h3 class="tl-section-title">Industry</h3>
+
+<div class="tl">
+
+  <div class="tl-item">
+    <div class="tl-date">2026</div>
+    <div class="tl-rail"><span class="tl-dot"></span></div>
+    <div class="tl-logo"><img src="{{ '/assets/img/logos/moodys_icon.png' | relative_url }}" alt="Moody's Analytics"></div>
+    <div class="tl-body">
+      <p class="tl-role">SDE Intern - AI Agent</p>
+      <p class="tl-company"><a href="https://www.moodys.com/" target="_blank">Moody's Analytics</a> · Internship</p>
+      <p class="tl-meta">Jun 2026 - Aug 2026 · San Francisco, CA</p>
+      <p class="tl-desc">Work on <strong>knowledge iteration</strong> and <strong>agent evaluation</strong> for Moody's banking decision-intelligence agent: injecting domain knowledge through skills, then measuring and optimizing against <strong>Langfuse</strong> traces, inside a <strong>LangGraph</strong> orchestration on AWS.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-date">2024 - 2025</div>
+    <div class="tl-rail"><span class="tl-dot"></span></div>
+    <div class="tl-logo"><img src="{{ '/assets/img/logos/cambioml_logo.jpeg' | relative_url }}" alt="CambioML"></div>
+    <div class="tl-body">
+      <p class="tl-role">Machine Learning Engineer</p>
+      <p class="tl-company"><a href="https://www.cambioml.com/en" target="_blank">CambioML (YC S23)</a> · Full-time</p>
+      <p class="tl-meta">Jul 2024 - Jul 2025 · San Jose, CA</p>
+      <p class="tl-desc">Engineered and productionized <a href="https://www.cambioml.com/en" target="_blank"><strong>AnyParser</strong></a>, a fine-tuned 1B &amp; 2B vision-language model for parsing PDFs into structured Markdown, fully fine-tuned and preference-aligned, beating GPT-4 baselines; <strong>SGLang</strong> inference delivered <strong>8× throughput</strong> on L4 GPUs, deployed as a SaaS on AWS (ECS + Lambda). Led design and deployment of <a href="https://energent.ai" target="_blank"><strong>Energent.ai</strong></a>, a Claude-powered Computer-Use Agent (CUA) sandbox with multi-agent orchestration, long-term memory, and per-user Kubernetes-isolated VM sessions scaling to 1000+ users.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-date">2023</div>
+    <div class="tl-rail"><span class="tl-dot"></span></div>
+    <div class="tl-logo"><img src="{{ '/assets/img/logos/inspur.jpeg' | relative_url }}" alt="Inspur Group"></div>
+    <div class="tl-body">
+      <p class="tl-role">Machine Learning Engineer Intern</p>
+      <p class="tl-company">Inspur Group · Internship</p>
+      <p class="tl-meta">May 2023 - Aug 2023 · Jinan, China</p>
+      <p class="tl-desc">Built and annotated a custom volleyball dataset, then trained <strong>YOLOv7</strong> detectors and YOLO Pose keypoint models for real-time athletic movement analysis. Accelerated inference with <strong>TensorRT</strong> to cut latency while preserving accuracy.</p>
+    </div>
+  </div>
+
+  {% unless include.compact %}
+  <div class="tl-item">
+    <div class="tl-date">2022 - 2023</div>
+    <div class="tl-rail"><span class="tl-dot"></span></div>
+    <div class="tl-logo"><img src="{{ '/assets/img/logos/illinois_leadership_center_logo.jpeg' | relative_url }}" alt="Illinois Leadership Center"></div>
+    <div class="tl-body">
+      <p class="tl-role">Data Analyst</p>
+      <p class="tl-company"><a href="https://leadership.illinois.edu/" target="_blank">Illinois Leadership Center</a></p>
+      <p class="tl-meta">Aug 2022 - May 2023 · Urbana, IL</p>
+      <p class="tl-desc">Analyzed weekly leadership-survey data, produced visualizations and reports, and helped facilitate leadership and communication workshops on campus.</p>
+    </div>
+  </div>
+  {% endunless %}
+
+</div>
+
+<h3 class="tl-section-title">Research</h3>
+
+<div class="tl">
+
+  <div class="tl-item tl-item--current">
+    <div class="tl-date">2025 - present</div>
+    <div class="tl-rail"><span class="tl-dot"></span></div>
+    <div class="tl-logo tl-logo--ucsd"><img src="{{ '/assets/img/logos/ucsd_logo.svg' | relative_url }}" alt="UC San Diego"></div>
+    <div class="tl-body">
+      <p class="tl-role">Research Assistant - STABLE Lab</p>
+      <p class="tl-company"><a href="https://ucsd.edu" target="_blank">UC San Diego</a> · <a href="https://cseweb.ucsd.edu/~jzhao/" target="_blank">Prof. Jishen Zhao</a></p>
+      <p class="tl-meta">Nov 2025 - Present · San Diego, CA</p>
+      <p class="tl-desc">Agents fail on long-horizon work for three separable reasons: the context they are served, what they retain from it, and how they were trained to act on it. <strong>ML systems</strong>: CodeNib compiles lexical, dense, and structural views of a repository once per commit and maintains them incrementally, so coding agents receive bounded context instead of rediscovering the codebase every task, with graph and vector updates running 8.7× and 25.4× faster than rebuilding when outputs match. <strong>Agent memory</strong>: AMA-Bench measures whether agents carry state across extended task sequences, rather than scoring the single-turn recall that most memory benchmarks reward. <strong>RL training</strong>: PRO-V-R1 post-trains programming agents for RTL verification with supervised fine-tuning plus reinforcement learning on verification rewards derived from program-tool feedback.</p>
+      <p class="tl-pubs-label">Publications</p>
+      <ul class="tl-pubs">
+        <li><a href="https://arxiv.org/abs/2607.25431" target="_blank">CodeNib: A Multi-View Data System for Serving Repository Context to Coding Agents</a> <span class="tl-venue">· arXiv 2026</span></li>
+        <li><a href="https://arxiv.org/abs/2602.22769" target="_blank">AMA-Bench: Evaluating Long-Horizon Memory for Agentic Applications</a> <span class="tl-venue">· ICML 2026</span></li>
+        <li><a href="https://arxiv.org/abs/2506.12200" target="_blank">PRO-V-R1: Reasoning Enhanced Programming Agent for RTL Verification</a> <span class="tl-venue">· DAC 2026</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-date">2024 - 2025</div>
+    <div class="tl-rail"><span class="tl-dot"></span></div>
+    <div class="tl-logo"><img src="{{ '/assets/img/logos/university_of_illinois_at_urbana_champaign_logo.jpeg' | relative_url }}" alt="UIUC"></div>
+    <div class="tl-body">
+      <p class="tl-role">Research Assistant - SSAIL</p>
+      <p class="tl-company"><a href="https://github.com/Supercomputing-System-AI-Lab" target="_blank">Supercomputing System and AI Lab</a>, UIUC · <a href="https://minjiazhang.github.io/" target="_blank">Prof. Minjia Zhang</a></p>
+      <p class="tl-meta">Oct 2024 - Mar 2025 · Remote</p>
+      <p class="tl-desc">Extended <a href="https://github.com/deepspeedai/DeepSpeed/blob/master/blogs/deepspeed-chat/README.md" target="_blank">DeepSpeed-Chat</a>, whose RLHF pipeline shipped with PPO only, to preference-based post-training. Built a <strong>DPO trainer</strong> that scores chosen and rejected responses against a reference policy with adaptive KL control, added a <strong>best-of-N rejection-sampling</strong> variant, and extended the preference-data pipeline to feed both. Runs on DeepSpeed's <strong>hybrid engine</strong> and <strong>ZeRO</strong>.</p>
+      <p class="tl-pubs-label">Code</p>
+      <ul class="tl-pubs">
+        <li><a href="https://github.com/boqiny/deepspeed-chat" target="_blank">boqiny/deepspeed-chat</a> <span class="tl-venue">· DPO and rejection sampling for DeepSpeed-Chat</span></li>
+      </ul>
+    </div>
+  </div>
+
+  {% unless include.compact %}
+  <div class="tl-item">
+    <div class="tl-date">2023 - 2024</div>
+    <div class="tl-rail"><span class="tl-dot"></span></div>
+    <div class="tl-logo"><img src="{{ '/assets/img/logos/university_of_illinois_at_urbana_champaign_logo.jpeg' | relative_url }}" alt="Yu Lab, UIUC"></div>
+    <div class="tl-body">
+      <p class="tl-role">Research Assistant - Yu Lab</p>
+      <p class="tl-company"><a href="https://yu-lab.org/" target="_blank">UIUC, Prof. Xinzhu Yu</a></p>
+      <p class="tl-meta">Aug 2023 - Jul 2024 · Urbana, IL</p>
+      <p class="tl-desc">Applied deep learning to time-series microscopy of astrocytes for early detection of Alzheimer's-related changes.</p>
+    </div>
+  </div>
+  {% endunless %}
+
+  <div class="tl-item">
+    <div class="tl-date">2023 - 2024</div>
+    <div class="tl-rail"><span class="tl-dot"></span></div>
+    <div class="tl-logo"><img src="{{ '/assets/img/logos/ncsaatillinois_logo.jpeg' | relative_url }}" alt="NCSA"></div>
+    <div class="tl-body">
+      <p class="tl-role">NCSA SPIN Research Intern</p>
+      <p class="tl-company"><a href="https://www.ncsa.illinois.edu/about/" target="_blank">National Center for Supercomputing Applications</a> · <a href="https://shengwang12.github.io/" target="_blank">Prof. Sheng Wang</a></p>
+      <p class="tl-meta">Aug 2023 - May 2024 · Urbana, IL</p>
+      <p class="tl-desc">Machine learning for geospatial and remote-sensing data: multi-temporal crop classification with <strong>pre-trained vision foundation models</strong>, and field-level crop-residue and tillage-practice detection across the EU from multi-source satellite imagery.</p>
+      <p class="tl-pubs-label">Publications</p>
+      <ul class="tl-pubs">
+        <li><a href="https://meetingorganizer.copernicus.org/EGU24/EGU24-14253.html" target="_blank">Detecting Field-level Crop Residue Cover across the EU Using Multi-source Satellite Data and Explainable Machine Learning</a> <span class="tl-venue">· EGU General Assembly 2024</span></li>
+      </ul>
+    </div>
+  </div>
+
+  {% unless include.compact %}
+  <div class="tl-item">
+    <div class="tl-date">2022</div>
+    <div class="tl-rail"><span class="tl-dot"></span></div>
+    <div class="tl-logo"><img src="{{ '/assets/img/logos/igl.jpeg' | relative_url }}" alt="Illinois Geometry Lab"></div>
+    <div class="tl-body">
+      <p class="tl-role">Research Assistant</p>
+      <p class="tl-company"><a href="https://iml.math.illinois.edu/" target="_blank">Illinois Geometry Lab</a> · Prof. Felix Leditzky</p>
+      <p class="tl-meta">Jan 2022 - May 2022 · Urbana, IL</p>
+      <p class="tl-desc">Studied quantum capacity bounds via semidefinite programming.</p>
+    </div>
+  </div>
+  {% endunless %}
+
+</div>
