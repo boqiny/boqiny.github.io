@@ -15,8 +15,8 @@ Google Scholar: https://scholar.google.com/citations?user=AglrzBgAAAAJ
 
 - **Agent evaluation and benchmarks.** Co-author of SkillsBench and Agents' Last Exam, community
   benchmarks measuring how well LLM agents handle real, expertise-heavy work. Authored a merged
-  adapter (PR #1635) in Harbor, the 3.7k-star agent-evaluation framework used by Terminal-Bench:
-  https://github.com/harbor-framework/harbor/pull/1635
+  adapter in Harbor, the 3.7k-star agent-evaluation framework used by Terminal-Bench:
+  https://github.com/harbor-framework/harbor
 - **Agent memory.** Co-author of AMA-Bench (ICML 2026), an evaluation framework for long-horizon
   memory in agentic applications. First author of memory-probe (ICLR 2026 workshop), which separates
   retrieval failures from utilization failures in agent memory.
