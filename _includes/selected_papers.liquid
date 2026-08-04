@@ -1,3 +1,8 @@
+<!-- Rendered one query per entry so the homepage order is curated, independent of
+     the chronological order used on the full publications page. -->
 <div class="publications">
-  {% bibliography --group_by none --query @*[selected=true]* %}
+  {% bibliography --group_by none --query @*[key=zhao2026amabench] %}
+  {% bibliography --group_by none --query @*[key=yu2026codenib] %}
+  {% bibliography --group_by none --query @*[key=zhao2026provr1] %}
+  {% bibliography --group_by none --query @*[key=yuan2026diagnosing] %}
 </div>
