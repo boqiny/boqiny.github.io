@@ -62,7 +62,7 @@ I'm a Master's student in Computer Science at **UC San Diego**, where I work wit
 
 These days I spend my time on three things:
 
-- **Agent evaluation and benchmarks** - benchmarks and diagnostics for **long-horizon** LLM agents: [SkillsBench](https://arxiv.org/abs/2602.12670), [Agents' Last Exam](https://arxiv.org/abs/2606.05405), [AMA-Bench](https://github.com/AMA-Bench/AMA-Bench){:.hl} (ICML 2026), and [memory-probe](https://github.com/boqiny/memory-probe){:.hl}. I also contribute to open-source agent tooling: [Harbor](https://github.com/harbor-framework/harbor){:.hl}, [Terminal-Bench](https://www.tbench.ai/), [QF-Bench](https://qfbench.com/), and [AgenticVBench](https://github.com/PhiloLabs/agentic-vbench).
+- **Agent evaluation and benchmarks** - benchmarks and diagnostics for **long-horizon** LLM agents: [SkillsBench](https://arxiv.org/abs/2602.12670), [Agents' Last Exam](https://arxiv.org/abs/2606.05405), [AMA-Bench](https://github.com/AMA-Bench/AMA-Bench){:.hl} (ICML 2026), and [memory-probe](https://github.com/boqiny/memory-probe){:.hl}. I also contribute to open-source agentic benchmarks: [Harbor](https://github.com/harbor-framework/harbor){:.hl}, [Terminal-Bench](https://www.tbench.ai/), [QF-Bench](https://qfbench.com/), and [AgenticVBench](https://github.com/PhiloLabs/agentic-vbench).
 - **Model training and alignment** - post-training LLMs and VLMs: supervised fine-tuning, LoRA, and RL alignment with PPO, DPO, and GRPO in PyTorch and DeepSpeed.
 - **ML systems and inference** - serving models under production load with SGLang, vLLM, speculative decoding, quantization, Kubernetes, and AWS. Studied [speculative tool calling](https://github.com/boqiny/spec_tool_call) for agent latency.
 
