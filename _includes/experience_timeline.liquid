@@ -126,6 +126,30 @@
     filter: brightness(0) invert(1);
     padding: 13px 10px;
   }
+  /* One block per product so distinct systems do not run together. */
+  .tl-proj {
+    font-size: 0.92rem;
+    line-height: 1.58;
+    margin: 0 0 0.5rem;
+    opacity: 0.92;
+  }
+  .tl-proj:last-of-type {
+    margin-bottom: 0;
+  }
+  /* Products get their own hue so they read as artifacts I built, not as the
+     company and advisor references that share the page accent. */
+  .tl-proj a {
+    color: #0f766e;
+  }
+  .tl-proj a:hover {
+    color: #115e59;
+  }
+  html[data-theme="dark"] .tl-proj a {
+    color: #2dd4bf;
+  }
+  html[data-theme="dark"] .tl-proj a:hover {
+    color: #5eead4;
+  }
   .tl-pubs-label {
     font-size: 0.82rem;
     opacity: 0.6;
@@ -197,7 +221,7 @@
     <div class="tl-rail"><span class="tl-dot"></span></div>
     <div class="tl-logo"><img src="{{ '/assets/img/logos/moodys_icon.png' | relative_url }}" alt="Moody's Analytics"></div>
     <div class="tl-body">
-      <p class="tl-role">SDE Intern - AI Agent</p>
+      <p class="tl-role">Software Engineer Intern - AI Agent</p>
       <p class="tl-company"><a href="https://www.moodys.com/" target="_blank">Moody's Analytics</a> · Internship</p>
       <p class="tl-meta">Jun 2026 - Aug 2026 · San Francisco, CA</p>
       <p class="tl-desc">Work on <strong>knowledge iteration</strong> and <strong>agent evaluation</strong> for Moody's banking decision-intelligence agent: injecting domain knowledge through skills, then measuring and optimizing against <strong>Langfuse</strong> traces, inside a <strong>LangGraph</strong> orchestration on AWS.</p>
@@ -209,10 +233,15 @@
     <div class="tl-rail"><span class="tl-dot"></span></div>
     <div class="tl-logo"><img src="{{ '/assets/img/logos/cambioml_logo.jpeg' | relative_url }}" alt="CambioML"></div>
     <div class="tl-body">
-      <p class="tl-role">Machine Learning Engineer</p>
+      <p class="tl-role">Founding Machine Learning Engineer</p>
       <p class="tl-company"><a href="https://www.cambioml.com/en" target="_blank">CambioML (YC S23)</a> · Full-time</p>
-      <p class="tl-meta">Jul 2024 - Jul 2025 · San Jose, CA</p>
-      <p class="tl-desc">Engineered and productionized <a href="https://www.cambioml.com/en" target="_blank"><strong>AnyParser</strong></a>, a fine-tuned 1B &amp; 2B vision-language model for parsing PDFs into structured Markdown, fully fine-tuned and preference-aligned, beating GPT-4 baselines; <strong>SGLang</strong> inference delivered <strong>8× throughput</strong> on L4 GPUs, deployed as a SaaS on AWS (ECS + Lambda). Led design and deployment of <a href="https://energent.ai" target="_blank"><strong>Energent.ai</strong></a>, a Claude-powered Computer-Use Agent (CUA) sandbox with multi-agent orchestration, long-term memory, and per-user Kubernetes-isolated VM sessions scaling to 1000+ users.</p>
+      <p class="tl-meta">May 2024 - Jul 2025 · San Jose, CA</p>
+      <p class="tl-proj">Trained and productionized <a href="https://github.com/CambioML/any-parser" target="_blank"><strong>AnyParser</strong></a>, a 1B &amp; 2B vision-language model that parses PDFs, including <strong>tables and charts</strong>, into structured Markdown: sourced PDFs from <strong>Common Crawl</strong>, built the cleaning, filtering, and annotation pipeline that produced the ground truth, then fully fine-tuned and preference-aligned on <strong>8&times;A100s</strong>, beating GPT-4 baselines on DocVQA (ANLS). Served with <strong>SGLang</strong> at <strong>150 output tokens/s</strong> on a single L4 GPU, deployed as a SaaS on AWS (ECS + Lambda).</p>
+      <p class="tl-proj">Core contributor to <a href="https://energent.ai" target="_blank"><strong>Energent.ai</strong></a>, a Claude-powered <strong>computer-use agent (CUA)</strong> sandbox with multi-agent orchestration, long-term memory, and per-user Kubernetes-isolated VM sessions, reaching <strong>1,000+ registered users</strong>. Separately, built a <strong>computer-use gym</strong>: a reproducible desktop environment with defined tasks where agent rollouts generate the trajectories used to evaluate and post-train CUA agents.</p>
+      <p class="tl-pubs-label">Whitepaper</p>
+      <ul class="tl-pubs">
+        <li><a href="https://www.cambioml.com/research/AnyParser_Epsilla_Whitepaper.pdf" target="_blank">Achieving 2x Accuracy in Knowledge Retrieval from Charts and Tables without Intensive Prompt Engineering</a> <span class="tl-venue">· CambioML &amp; Epsilla, 2024</span></li>
+      </ul>
     </div>
   </div>
 
@@ -256,7 +285,7 @@
       <p class="tl-role">Research Assistant - STABLE Lab</p>
       <p class="tl-company"><a href="https://ucsd.edu" target="_blank">UC San Diego</a> · <a href="https://cseweb.ucsd.edu/~jzhao/" target="_blank">Prof. Jishen Zhao</a></p>
       <p class="tl-meta">Nov 2025 - Present · San Diego, CA</p>
-      <p class="tl-desc">Agents fail on long-horizon work for three separable reasons: the context they are served, what they retain from it, and how they were trained to act on it. <strong>ML systems</strong>: CodeNib compiles lexical, dense, and structural views of a repository once per commit and maintains them incrementally, so coding agents receive bounded context instead of rediscovering the codebase every task, with graph and vector updates running 8.7× and 25.4× faster than rebuilding when outputs match. <strong>Agent memory</strong>: AMA-Bench measures whether agents carry state across extended task sequences, rather than scoring the single-turn recall that most memory benchmarks reward. <strong>RL training</strong>: PRO-V-R1 post-trains an 8B programming agent for RTL verification with SFT plus GRPO on verification rewards derived from program-tool feedback, beating far larger proprietary models on functional correctness.</p>
+      <p class="tl-desc">Agents fail on long-horizon work for three separable reasons: the context they are served, what they retain from it, and how they were trained to act on it. <strong>ML systems</strong>: CodeNib compiles lexical, dense, and structural views of a repository once per commit and maintains them incrementally, so coding agents receive bounded context instead of rediscovering the codebase every task, with graph and vector updates running 8.7× and 25.4× faster than an independent rebuild at the median across 100 repository snapshots, on the subset where outputs match. <strong>Agent memory</strong>: AMA-Bench measures whether agents carry state across extended task sequences, rather than scoring the single-turn recall that most memory benchmarks reward. <strong>RL training</strong>: PRO-V-R1 post-trains an 8B programming agent for RTL verification with SFT plus GRPO on verification rewards derived from program-tool feedback, beating GPT-4o on VerilogEval-v2 functional correctness (57.7% vs 43.0%).</p>
       <p class="tl-pubs-label">Publications</p>
       <ul class="tl-pubs">
         <li><a href="https://arxiv.org/abs/2607.25431" target="_blank">CodeNib: A Multi-View Data System for Serving Repository Context to Coding Agents</a> <span class="tl-venue">· arXiv 2026</span></li>
@@ -322,6 +351,10 @@
       <p class="tl-company"><a href="https://iml.math.illinois.edu/" target="_blank">Illinois Geometry Lab</a> · Prof. Felix Leditzky</p>
       <p class="tl-meta">Jan 2022 - May 2022 · Urbana, IL</p>
       <p class="tl-desc">Studied quantum capacity bounds via semidefinite programming.</p>
+      <p class="tl-pubs-label">Poster</p>
+      <ul class="tl-pubs">
+        <li><a href="{{ '/assets/pdf/igl2022_capacity_poster.pdf' | relative_url }}" target="_blank">Quantum Capacity Bounds and Semidefinite Programming</a> <span class="tl-venue">· Illinois Geometry Lab, 2022</span></li>
+      </ul>
     </div>
   </div>
   {% endunless %}

@@ -1,0 +1,320 @@
+\documentclass[10pt, letterpaper]{article}
+
+% Packages:
+\usepackage[
+    ignoreheadfoot, % set margins without considering header and footer
+    top=0.5 cm, % seperation between body and page edge from the top
+    bottom=0.5 cm, % seperation between body and page edge from the bottom
+    left=0.7cm, % seperation between body and page edge from the left
+    right=0.7 cm, % seperation between body and page edge from the right
+    % showframe % for debugging 
+]{geometry} % for adjusting page geometry
+\usepackage{titlesec} % for customizing section titles
+\usepackage{tabularx} % for making tables with fixed width columns
+\usepackage{array} % tabularx requires this
+\usepackage[dvipsnames]{xcolor} % for coloring text
+\definecolor{primaryColor}{RGB}{0, 79, 144} % define primary color
+\usepackage{enumitem} % for customizing lists
+\usepackage{fontawesome} % FontAwesome v4 icons (v5's Solid-900 OTF wedges tectonic on this machine)
+\usepackage{amsmath} % for math
+\usepackage[
+    pdftitle={Boqin Yuan's CV},
+    pdfauthor={Boqin Yuan},
+    pdfcreator={LaTeX with RenderCV},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref} % for links, metadata and bookmarks
+\usepackage[pscoord]{eso-pic} % for floating text on the page
+\usepackage{calc} % for calculating lengths
+\usepackage{bookmark} % for bookmarks
+\usepackage{lastpage} % for getting the total number of pages
+\usepackage{changepage} % for one column entries (adjustwidth environment)
+\usepackage{paracol} % for two and three column entries
+\usepackage{ifthen} % for conditional statements
+\usepackage{needspace} % for avoiding page brake right after the section title
+\usepackage{iftex} % check if engine is pdflatex, xetex or luatex
+\usepackage{microtype}
+
+% Ensure that generate pdf is machine readable/ATS parsable:
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    % \usepackage[T1]{fontenc} % this breaks sb2nov
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+
+
+% Some settings:
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt} % remove space before adjustwidth environment
+\pagestyle{empty} % no header or footer
+\setcounter{secnumdepth}{0} % no section numbering
+\setlength{\parindent}{0pt} % no indentation
+\setlength{\topskip}{0pt} % no top skip
+\setlength{\columnsep}{0cm} % set column seperation
+% \makeatletter
+% \let\ps@customFooterStyle\ps@plain % Copy the plain style to customFooterStyle
+% \makeatother
+% \pagestyle{customFooterStyle}
+
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+
+\titlespacing{\section}{
+    % left space:
+    -1pt
+}{
+    % top space:
+    0.24 cm
+}{
+    % bottom space:
+    0.18 cm
+} % section title spacing
+
+\renewcommand\labelitemi{$\circ$} % custom bullet points
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.02 cm,
+        parsep=0.02 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0.2 cm + 10pt
+    ]
+}{
+    \end{itemize}
+} % new environment for highlights
+
+\newenvironment{highlightsforbulletentries}{
+    \begin{itemize}[
+        topsep=0.02 cm,
+        parsep=0.02 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=5pt
+    ]
+}{
+    \end{itemize}
+} % new environment for highlights for bullet entries
+
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{
+        0.2 cm + 0.00001 cm
+    }{
+        0.2 cm + 0.00001 cm
+    }
+}{
+    \end{adjustwidth}
+} % new environment for one column entries
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+} % new environment for two column entries
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+}{
+    \par\kern\topsep
+} % new environment for the header
+
+% 
+
+% save the original href command in a new command:
+\let\hrefWithoutArrow\href
+
+% new command for external links:
+\renewcommand{\href}[2]{\hrefWithoutArrow{#1}{\ifthenelse{\equal{#2}{}}{ }{#2 }\raisebox{.15ex}{\footnotesize \faExternalLink}}}
+
+
+\begin{document}
+    \newcommand{\AND}{\unskip
+        \cleaders\copy\ANDbox\hskip\wd\ANDbox
+        \ignorespaces
+    }
+    \newsavebox\ANDbox
+    \sbox\ANDbox{}
+
+    \begin{header}
+        \hrefWithoutArrow{https://boqiny.github.io/}{\textbf{\fontsize{24 pt}{24 pt}\selectfont Boqin Yuan}}
+    
+        \vspace{0.15 cm}
+
+        \normalsize
+        \mbox{{\color{black}\footnotesize\faMapMarker}\hspace*{0.13cm}San Diego, CA}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{}{\color{black}{\footnotesize\faEnvelope}\hspace*{0.13cm}b4yuan@ucsd.edu}}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{}{\color{black}{\footnotesize\faPhone}\hspace*{0.13cm}217-991-2180}}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{https://linkedin.com/in/boqin-yuan}{\color{black}{\footnotesize\faLinkedin}\hspace*{0.13cm}boqin-yuan}}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{https://github.com/boqiny}{\color{black}{\footnotesize\faGithub}\hspace*{0.13cm}boqiny}}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{https://scholar.google.com/citations?user=AglrzBgAAAAJ}{\color{black}{\footnotesize\faGraduationCap}\hspace*{0.13cm}Google Scholar}}%
+    \end{header}
+    
+    \section{Summary}
+    \begin{onecolentry}
+        I work on LLM agents end to end: the \textbf{benchmarks} that measure them, the \textbf{post-training} that improves them, and the \textbf{serving} stack that runs them. I shipped step-level agent evaluation at \textbf{Moody's}. I co-authored \textbf{SkillsBench} and \textbf{Agents' Last Exam}, and contributed to the \textbf{Harbor} eval framework. I post-train language and vision-language models with supervised fine-tuning, \textbf{LoRA}, and \textbf{RL}, serve them under production load, and extend open-source \textbf{RLHF} pipelines. See more at \href{https://boqiny.github.io}{boqiny.github.io}
+
+    \end{onecolentry}
+    
+    \section{Education}
+
+\begin{twocolentry}{
+    \textit{Sep 2025 – Dec 2026 (GPA: 3.96)}}
+    \textbf{University of California, San Diego} \\[0.2em]
+    \textit{M.S. in Computer Science}
+\end{twocolentry}
+
+\vspace{0.15 cm}
+\begin{twocolentry}{
+    \textit{Aug 2020 – May 2024 (GPA: 3.9)}}
+    \textbf{University of Illinois at Urbana-Champaign} \\[0.2em]
+    \textit{B.S. in Mathematics \& Computer Science; B.S. in Statistics}
+\end{twocolentry}
+
+\begin{onecolentry}
+    \begin{highlights}
+        \item Graduate with \textbf{Highest} Distinction; James Scholarship \& Deans List
+    \end{highlights}
+\end{onecolentry}
+
+
+    \section{Work Experience}
+
+        \vspace{0.1 cm}
+
+        \begin{twocolentry}{
+            \textit{San Francisco, CA}
+        
+            \textit{Jun 2026 – Aug 2026}}
+            \textbf{Software Engineer Intern (AI Agent)}
+        
+            \textit{Moody's Analytics}
+        \end{twocolentry}
+        
+        \vspace{0.05 cm}
+        \begin{onecolentry}
+    \begin{highlights}
+        \item Building the \textbf{knowledge-iteration pipeline} behind a \textbf{Banking Decision Intelligence agent}, a \textbf{LangGraph} system that automates analyst workflows, serving in production on \textbf{AWS}. Shipped a \textbf{FastAPI} $+$ \textbf{React} service that scores every \textbf{Langfuse} trace with a step-level eval suite, combining rubric \textbf{LLM-as-judge} scoring with deterministic tool-call checks to pin each failure on the specific domain knowledge the agent was missing.
+    \end{highlights}
+\end{onecolentry}
+        
+        \begin{twocolentry}{
+            \textit{San Jose, CA}    
+            
+            \textit{May 2024 – July 2025}}
+            \textbf{Founding Machine Learning Engineer}
+            
+            \textit{CambioML (YC S23)}
+        \end{twocolentry}
+        
+        \vspace{0.05 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Engineered and deployed \href{https://github.com/CambioML/any-parser}{\textbf{Anyparser}}, a fine-tuned 1B $\&$ 2B \textbf{vision-language model} for parsing PDFs into structured Markdown (text, tables, charts). Fully fine-tuned and post-aligned with preference data on \textbf{8$\times$A100} to improve robustness, beating GPT-4 baselines on \textbf{DocVQA} (ANLS). Optimized inference with \textbf{SGLang}, serving \textbf{150 output tokens/s} on a single \textbf{L4} GPU. Deployed as a SaaS on AWS (\textbf{ECS $+$ Lambda}).
+
+
+                
+                \item Core contributor to \href{https://app.energent.ai/agent}{\textbf{Energent.ai}}, a \textbf{computer-use agent (CUA)} sandbox powered by Claude that autonomously executes diverse desktop tasks. Engineered a \textbf{multi-agent system} with orchestration, \textbf{long-term memory persistence}, and state management, with tool integration and MCP. Leveraged \textbf{Kubernetes} to provision isolated per-user sandbox VM sessions, scaling to \textbf{1000$+$} registered users worldwide.
+
+
+            \end{highlights}
+        \end{onecolentry}
+        
+
+        \vspace{0.1 cm}
+
+
+\section{Research Experience}
+
+        \begin{twocolentry}{
+            \textit{San Diego, CA}
+
+            \textit{Nov 2025 – Present}}
+            \textbf{Research Assistant, STABLE Lab}
+
+            \textit{UC San Diego (Prof. Jishen Zhao)}
+        \end{twocolentry}
+
+        \vspace{0.05 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item \textbf{ML systems}: \textbf{CodeNib} compiles lexical, dense, and structural repository views per commit, incrementally, giving coding agents bounded context; graph and vector updates run \textbf{8.7x}/\textbf{25.4x} faster than rebuild at the median. \textbf{Agent memory}: \textbf{AMA-Bench} (ICML 2026) measures whether agents carry state across long horizons. \textbf{RL training}: \textbf{PRO-V-R1} (DAC 2026) post-trains an 8B agent with \textbf{SFT}$+$\textbf{GRPO} on verification rewards, beating GPT-4o on VerilogEval-v2 (57.7\% vs 43.0\%).
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.1 cm}
+
+        \begin{twocolentry}{
+            \textit{Remote}
+
+            \textit{Oct 2024 – Mar 2025}}
+            \textbf{Research Assistant, SSAIL}
+
+            \textit{UIUC (Prof. Minjia Zhang)}
+        \end{twocolentry}
+
+        \vspace{0.05 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Extended \textbf{DeepSpeed-Chat}, whose RLHF pipeline shipped with \textbf{PPO} only, to preference-based post-training. Built a \textbf{DPO trainer} scoring chosen/rejected responses against a reference policy with adaptive \textbf{KL} control, plus a best-of-N rejection-sampling variant and the data pipeline feeding both. Runs on DeepSpeed's \textbf{hybrid engine} and \textbf{ZeRO} with \textbf{LoRA}.
+            \end{highlights}
+        \end{onecolentry}
+
+\section{Selected Publications}
+
+\begin{onecolentry}
+\href{https://arxiv.org/abs/2602.22769}{\textbf{AMA-Bench: Evaluating Long-Horizon Memory for Agentic Applications}} \textit{ICML 2026}
+\end{onecolentry}
+
+\begin{onecolentry}
+\href{https://arxiv.org/abs/2607.25431}{\textbf{CodeNib: A Multi-View Data System for Serving Repository Context to Coding Agents}} \textit{arXiv 2026}
+\end{onecolentry}
+
+\begin{onecolentry}
+\href{https://arxiv.org/abs/2506.12200}{\textbf{PRO-V-R1: Reasoning Enhanced Programming Agent for RTL Verification}} \textit{DAC 2026}
+\end{onecolentry}
+
+\begin{onecolentry}
+\href{https://arxiv.org/abs/2603.02473}{\textbf{Diagnosing Retrieval vs. Utilization Bottlenecks in LLM Agent Memory}} \textit{ICLR 2026 Workshop on MemAgents}
+\end{onecolentry}
+
+
+
+
+
+
+
+\section{Skills}
+
+\begin{onecolentry}
+\textbf{Languages:} \textbf{Python}, C++/C, SQL, JavaScript/TypeScript, Bash \\
+\textbf{Post-training:} \textbf{PyTorch}, \textbf{DeepSpeed}, \textbf{ZeRO}, verl, \textbf{SFT}, \textbf{LoRA}, \textbf{RL}, \textbf{RLHF}, Hugging Face \\
+\textbf{Agents \& Evals:} \textbf{eval harnesses}, \textbf{LLM-as-judge graders}, \textbf{RL environments}, \textbf{MCP}, \textbf{LangGraph}, Langfuse, \textbf{RAG} \\
+\textbf{Serving \& Systems:} \textbf{SGLang}, vLLM, TensorRT, \textbf{speculative decoding}, quantization, FastAPI, React, Spark \\
+\textbf{Cloud:} \textbf{AWS}, GCP, Azure, \textbf{Docker}, \textbf{Kubernetes}, Terraform, CI/CD, \textbf{Git}, \textbf{Linux}
+\end{onecolentry}
+
+
+
+
+\end{document}

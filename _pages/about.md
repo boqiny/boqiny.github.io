@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: Machine learning engineer · MS Computer Science, UC San Diego
+subtitle: Building the evaluation, post-training, and serving infrastructure that makes LLM agents work
 
 profile:
   align: right
@@ -58,15 +58,15 @@ latest_posts:
   }
 </style>
 
-I build the infrastructure that measures whether LLM agents actually work: benchmarks, memory diagnostics, and the evaluation harnesses they run on. I also train and serve the models underneath.
+I'm a Master's student in Computer Science at **UC San Diego**, where I work with [Prof. Jishen Zhao](https://cseweb.ucsd.edu/~jzhao/)'s STABLE Lab on **agent memory** and **ML systems**. I spent summer 2026 as a Software Engineer Intern (AI Agent) at [Moody's Analytics](https://www.moodys.com/){:.hl} in San Francisco, working on knowledge iteration and evaluation for their banking agent. Before UCSD, I was the founding Machine Learning Engineer at [CambioML (YC S23)](https://www.cambioml.com/en){:.hl} for over a year, where I trained and deployed [AnyParser](https://github.com/CambioML/any-parser), a vision-language model for document parsing, and built [Energent.ai](https://energent.ai), a computer-use agent sandbox. I studied Mathematics & Computer Science and Statistics at **UIUC** before that.
 
-I'm a Master's student in Computer Science at **UC San Diego**, where I work with [Prof. Jishen Zhao](https://cseweb.ucsd.edu/~jzhao/)'s STABLE Lab on **agent memory** and **ML systems**. I spent summer 2026 as an SDE Intern (AI Agent) at [Moody's Analytics](https://www.moodys.com/){:.hl} in San Francisco, working on knowledge iteration and evaluation for their banking agent. Before UCSD, I was a full-time Machine Learning Engineer at [CambioML (YC S23)](https://www.cambioml.com/en){:.hl} for a year, where I trained and deployed [AnyParser](https://github.com/CambioML/any-parser), a vision-language model for document parsing, and built [Energent.ai](https://energent.ai), a computer-use agent sandbox. I studied Mathematics & Computer Science and Statistics at **UIUC** before that.
+These days I spend my time on three things:
 
 - **Agent evaluation and benchmarks** - benchmarks and diagnostics for LLM agents: [SkillsBench](https://arxiv.org/abs/2602.12670), [Agents' Last Exam](https://arxiv.org/abs/2606.05405), [AMA-Bench](https://github.com/AMA-Bench/AMA-Bench){:.hl} (ICML 2026), and [memory-probe](https://github.com/boqiny/memory-probe){:.hl}. Contributor to [Harbor](https://github.com/harbor-framework/harbor){:.hl}, [Terminal-Bench](https://www.tbench.ai/), [QF-Bench](https://qfbench.com/), and [AgenticVBench](https://github.com/PhiloLabs/agentic-vbench).
 - **Model training and alignment** - post-training LLMs and VLMs: supervised fine-tuning, LoRA, and RL alignment with PPO, DPO, and GRPO in PyTorch and DeepSpeed.
-- **ML systems and inference** - serving models under production load with SGLang, vLLM, speculative decoding, quantization, Kubernetes, and AWS. Built [speculative tool calling](https://github.com/boqiny/spec_tool_call) to cut agent latency.
+- **ML systems and inference** - serving models under production load with SGLang, vLLM, speculative decoding, quantization, Kubernetes, and AWS. Studied [speculative tool calling](https://github.com/boqiny/spec_tool_call) for agent latency.
 
-**Graduating Dec 2026, available for full-time roles from Jan 2027.**
+**Graduating Dec 2026, open to full-time roles from Jan 2027.**
 
 <div style="display:flex; flex-wrap:wrap; gap:0.6rem 1.4rem; margin-top:0.5rem; font-size:1rem;">
   <a href="mailto:b4yuan@ucsd.edu" style="display:flex; align-items:center; gap:0.4rem; text-decoration:none; opacity:0.8;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'"><i class="fa-solid fa-envelope"></i> Email</a>

@@ -21,20 +21,30 @@ Google Scholar: https://scholar.google.com/citations?user=AglrzBgAAAAJ
   memory in agentic applications. First author of memory-probe (ICLR 2026 workshop), which separates
   retrieval failures from utilization failures in agent memory.
 - **Model training and alignment.** Trained and productionized AnyParser, a 1B/2B vision-language
-  model for parsing PDFs into structured Markdown, using full fine-tuning plus preference alignment
-  to beat GPT-4 baselines on parsing accuracy.
-- **ML systems and inference.** Achieved 8x inference throughput on L4 GPUs with SGLang, deployed on
-  AWS (ECS + Lambda), with per-user Kubernetes-isolated sandbox sessions serving over 1,000 users.
+  model that parses PDFs including tables and charts into structured Markdown, fully fine-tuned and
+  preference-aligned on 8xA100s to beat GPT-4 baselines on DocVQA (ANLS).
+- **ML systems and inference.** Served a vision-language model at 150 output tokens/s on a single
+  L4 GPU with SGLang, deployed on AWS (ECS + Lambda), with per-user Kubernetes-isolated sandbox
+  sessions serving over 1,000 users.
 
 ## Experience
 
-- **Moody's Analytics** (Jun 2026 - Aug 2026, San Francisco): SDE Intern - AI Agent (internship).
-  Work on agent evaluation and knowledge iteration for Moody's banking decision-intelligence agent:
-  injecting domain knowledge through skills, then measuring and optimizing against Langfuse traces,
-  inside a LangGraph orchestration on AWS.
-- **CambioML (YC S23)** (Jul 2024 - Jul 2025, San Jose): Machine Learning Engineer, full-time.
-  Built AnyParser (vision-language model, fine-tuning and preference alignment, SGLang serving) and
-  led Energent.ai, a Claude-powered computer-use agent platform scaled past 1,000 users.
+- **Moody's Analytics** (Jun 2026 - Aug 2026, San Francisco): Software Engineer Intern - AI Agent (internship).
+  Agent evaluation for Moody's Banking Decision Intelligence agent, a LangGraph system automating
+  analyst workflows in production on AWS: a FastAPI and React service scores every Langfuse trace
+  with a step-level eval suite, pairing rubric LLM-as-judge scoring with deterministic tool-call
+  checks to pin each failure on the missing domain knowledge. Knowledge iteration: a Claude Agent
+  SDK curation agent turns each diagnosis into a versioned skill, injected into the knowledge base
+  at runtime with no redeploy.
+- **CambioML (YC S23)** (May 2024 - Jul 2025, San Jose): Founding Machine Learning Engineer, full-time.
+  Built the AnyParser data pipeline (PDFs sourced from Common Crawl, then cleaned, filtered, and
+  annotated to produce ground truth) and trained the model: a 1B/2B vision-language model that parses
+  PDFs including tables and charts into structured Markdown, fully fine-tuned and preference-aligned
+  on 8xA100s, beating GPT-4 baselines on DocVQA (ANLS), served with SGLang at 150 output tokens/s
+  on a single L4 GPU. Core contributor to Energent.ai, a Claude-powered computer-use agent sandbox
+  that reached 1,000+ registered users. Separately, built a computer-use gym: a reproducible desktop
+  environment with defined tasks, where agent rollouts generate the trajectories used to evaluate
+  and post-train CUA agents.
 - **Inspur Group** (May 2023 - Aug 2023): ML Engineer Intern. YOLOv7 detection and pose estimation,
   TensorRT inference acceleration.
 - **UC San Diego, STABLE Lab** (2025 - present): MS Computer Science, agent memory and ML systems
