@@ -43,7 +43,7 @@ Google Scholar: https://scholar.google.com/citations?user=AglrzBgAAAAJ
   Prof. Minjia Zhang. Extended DeepSpeed-Chat, which shipped with PPO only, to preference-based
   post-training: a DPO trainer (reference-policy log-ratios, adaptive KL control) and a best-of-N
   rejection-sampling variant, on DeepSpeed's hybrid engine and ZeRO. Code: https://github.com/boqiny/deepspeed-chat
-- **UIUC** (2020 - 2024): BS Mathematics & Computer Science, and Statistics. Research at NCSA and
+- **UIUC** (2020 - 2024): BS in Mathematics & Computer Science and in Statistics. Research at NCSA and
   the Illinois Geometry Lab.
 
 ## Selected publications
