@@ -38,11 +38,11 @@ Google Scholar: https://scholar.google.com/citations?user=AglrzBgAAAAJ
   at runtime with no redeploy.
 - **CambioML (YC S23)** (May 2024 - Jul 2025, San Jose): Founding Machine Learning Engineer, full-time.
   Built the AnyParser data pipeline (PDFs sourced from Common Crawl, then cleaned, filtered, and
-  annotated to produce ground truth) and trained the model: a 1B/2B vision-language model that parses
+  annotated) and trained the model: a 1B/2B vision-language model that parses
   PDFs including tables and charts into structured Markdown, fully fine-tuned and preference-aligned
   on 8xA100s, beating GPT-4 baselines on DocVQA (ANLS), served with SGLang at 150 output tokens/s
   on a single L4 GPU. Core contributor to Energent.ai, a Claude-powered computer-use agent sandbox
-  that reached 1,000+ registered users. Separately, built a computer-use gym: a reproducible desktop
+  that reached 1,000+ registered users. Built a computer-use gym: a reproducible desktop
   environment with defined tasks, where agent rollouts generate the trajectories used to evaluate
   and post-train CUA agents.
 - **Inspur Group** (May 2023 - Aug 2023): ML Engineer Intern. YOLOv7 detection and pose estimation,
