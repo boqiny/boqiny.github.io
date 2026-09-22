@@ -16,8 +16,8 @@ social: false
 
 announcements:
   enabled: false
-  scrollable: true
-  limit: 20
+  scrollable: false
+  limit: 3
 
 latest_posts:
   enabled: false
@@ -56,17 +56,35 @@ latest_posts:
     color: var(--global-theme-color);
     text-decoration-color: color-mix(in srgb, var(--global-theme-color) 45%, transparent);
   }
+  /* News: match the experience timeline (small muted dates, no bold, no
+     inner scroll box) so it reads as part of the page, not a widget. */
+  .post .news {
+    margin-bottom: 0 !important;
+  }
+  .post .news table th {
+    width: 88px !important;
+    font-weight: 400;
+    font-size: 0.82rem;
+    opacity: 0.6;
+    padding: 0.2rem 0.75rem 0.2rem 0;
+    font-variant-numeric: tabular-nums;
+    vertical-align: top;
+    line-height: 1.6;
+  }
+  .post .news table td {
+    padding: 0.2rem 0;
+  }
 </style>
 
-I'm a Master's student in Computer Science at **UC San Diego**, where I work with [Prof. Jishen Zhao](https://cseweb.ucsd.edu/~jzhao/)'s STABLE Lab on **agent memory** and **ML systems**. I spent summer 2026 as a Software Engineer Intern (AI Agent) at [Moody's Analytics](https://www.moodys.com/){:.hl} in San Francisco, working on knowledge iteration and evaluation for their banking agent. Before UCSD, I was the founding Machine Learning Engineer at [CambioML (YC S23)](https://www.cambioml.com/en){:.hl} for over a year, where I trained and deployed [AnyParser](https://github.com/CambioML/any-parser), a vision-language model for document parsing, and built [Energent.ai](https://energent.ai), a computer-use agent sandbox. I studied Mathematics & Computer Science and Statistics at **UIUC** before that.
+I'm a Master's student in Computer Science at **UC San Diego**, where I work with [Prof. Jishen Zhao](https://cseweb.ucsd.edu/~jzhao/)'s STABLE Lab on **agent memory** and **ML systems**. I spent summer 2026 as a Software Engineer Intern (AI Agent) at [Moody's Analytics](https://www.moodys.com/){:.hl} in San Francisco, working on knowledge iteration and evaluation for their banking agent. Before UCSD, I was the **founding** Machine Learning Engineer at [CambioML (YC S23)](https://www.cambioml.com/en){:.hl} for over a year, where I trained and deployed [AnyParser](https://github.com/CambioML/any-parser), a vision-language model for document parsing, and built [Energent.ai](https://energent.ai), a computer-use agent sandbox. I studied Mathematics & Computer Science and Statistics at **UIUC** before that.
 
 These days I spend my time on three things:
 
-- **Agent evaluation and benchmarks** - benchmarks and diagnostics for **long-horizon** LLM agents: [SkillsBench](https://arxiv.org/abs/2602.12670), [Agents' Last Exam](https://arxiv.org/abs/2606.05405), [AMA-Bench](https://github.com/AMA-Bench/AMA-Bench){:.hl} (ICML 2026), and [memory-probe](https://github.com/boqiny/memory-probe){:.hl}. I also contribute to open-source agentic benchmarks: [Harbor](https://github.com/harbor-framework/harbor){:.hl}, [Terminal-Bench](https://www.tbench.ai/), [QF-Bench](https://qfbench.com/), and [AgenticVBench](https://github.com/PhiloLabs/agentic-vbench).
-- **Model training and alignment** - post-training LLMs and VLMs: supervised fine-tuning, LoRA, and RL alignment with PPO, DPO, and GRPO in PyTorch and DeepSpeed.
-- **ML systems and inference** - serving models under production load with SGLang, vLLM, speculative decoding, quantization, Kubernetes, and AWS. Studied [speculative tool calling](https://github.com/boqiny/spec_tool_call) for agent latency.
+- **Agent evaluation and benchmarks** - benchmarks and diagnostics for **long-horizon** LLM agents: [SkillsBench](https://arxiv.org/abs/2602.12670), [Agents' Last Exam](https://arxiv.org/abs/2606.05405), [AMA-Bench](https://github.com/AMA-Bench/AMA-Bench){:.hl} (ICML 2026), and [memory-probe](https://github.com/boqiny/memory-probe){:.hl}. I also contribute to open-source agentic benchmarks: [Harbor](https://github.com/harbor-framework/harbor){:.hl}, [Terminal-Bench](https://www.tbench.ai/), and [QF-Bench](https://qfbench.com/).
+- **Model training and alignment** - post-training LLMs and VLMs: training data curation, supervised fine-tuning, LoRA, and RL alignment with PPO, DPO, and GRPO in PyTorch and DeepSpeed.
+- **ML systems and inference** - serving models under production load with SGLang, vLLM, speculative decoding, quantization, Kubernetes, and AWS.
 
-**Graduating Dec 2026, open to full-time roles from Jan 2027.**
+**Graduating Dec 2026, open to full-time roles from Dec 2026.**
 
 <div style="display:flex; flex-wrap:wrap; gap:0.6rem 1.4rem; margin-top:0.5rem; font-size:1rem;">
   <a href="mailto:b4yuan@ucsd.edu" style="display:flex; align-items:center; gap:0.4rem; text-decoration:none; opacity:0.8;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'"><i class="fa-solid fa-envelope"></i> Email</a>
@@ -75,6 +93,10 @@ These days I spend my time on three things:
   <a href="https://scholar.google.com/citations?user=AglrzBgAAAAJ" target="_blank" style="display:flex; align-items:center; gap:0.4rem; text-decoration:none; opacity:0.8;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'"><i class="ai ai-google-scholar"></i> Google Scholar</a>
   <a href="/assets/pdf/Boqin_Resume.pdf" target="_blank" style="display:flex; align-items:center; gap:0.4rem; text-decoration:none; opacity:0.8;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'"><i class="fa-solid fa-file-pdf"></i> Resume</a>
 </div>
+
+<h2 style="margin-top: 2.5rem">News</h2>
+
+{% include news.liquid limit=true %}
 
 <h2 style="margin-top: 2.5rem"><a href="{{ '/experience/' | relative_url }}" style="color: inherit">Recent Experience</a></h2>
 
@@ -88,7 +110,7 @@ These days I spend my time on three things:
     "url": "https://boqiny.github.io",
     "email": "mailto:b4yuan@ucsd.edu",
     "jobTitle": "Machine Learning Engineer",
-    "description": "Machine learning engineer who builds infrastructure for evaluating LLM agents: benchmarks, memory diagnostics, and evaluation harnesses. Also trains and serves models. Graduating December 2026, available for full-time roles from January 2027.",
+    "description": "Machine learning engineer who builds infrastructure for evaluating LLM agents: benchmarks, memory diagnostics, and evaluation harnesses. Also trains and serves models. Graduating December 2026, available for full-time roles from December 2026.",
     "knowsAbout": [
       "LLM agents",
       "AI agent evaluation",
@@ -137,8 +159,8 @@ These days I spend my time on three things:
     ],
     "seeks": {
       "@type": "Demand",
-      "name": "Full-time roles starting January 2027 in LLM agent development and evaluation, model training and alignment, or ML systems and inference infrastructure",
-      "availabilityStarts": "2027-01"
+      "name": "Full-time roles starting December 2026 in LLM agent development and evaluation, model training and alignment, or ML systems and inference infrastructure",
+      "availabilityStarts": "2026-12"
     },
     "sameAs": [
       "https://github.com/boqiny",

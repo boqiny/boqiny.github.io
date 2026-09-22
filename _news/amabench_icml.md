@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-[AMA-Bench](https://ama-bench.github.io/) accepted to **ICML 2026**! :tada:
+[AMA-Bench](https://ama-bench.github.io/) accepted to **ICML 2026**!
