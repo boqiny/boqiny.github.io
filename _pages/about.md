@@ -76,7 +76,7 @@ latest_posts:
   }
 </style>
 
-I'm a Master's student in Computer Science at **UC San Diego**, where I work with [Prof. Jishen Zhao](https://cseweb.ucsd.edu/~jzhao/)'s STABLE Lab on **agent memory** and **ML systems**. I spent summer 2026 as a Software Engineer Intern (AI Agent) at [Moody's Analytics](https://www.moodys.com/){:.hl} in San Francisco, working on knowledge iteration and evaluation for their banking agent. Before UCSD, I was the **founding** Machine Learning Engineer at [CambioML (YC S23)](https://www.cambioml.com/en){:.hl} for over a year, where I trained and deployed [AnyParser](https://github.com/CambioML/any-parser), a vision-language model for document parsing, and built [Energent.ai](https://energent.ai), a computer-use agent sandbox. I studied Mathematics & Computer Science and Statistics at **UIUC** before that.
+I'm a Master's student in Computer Science at **UC San Diego**, where I work with [Prof. Jishen Zhao](https://cseweb.ucsd.edu/~jzhao/)'s STABLE Lab on **agent memory** and **ML systems**. I spent summer 2026 as a Software Engineer Intern (AI Agent) at [Moody's Analytics](https://www.moodys.com/){:.hl} in San Francisco, working on knowledge iteration and evaluation for their banking agent. Before UCSD, I was the founding Machine Learning Engineer at [CambioML (YC S23)](https://www.cambioml.com/en){:.hl} for over a year, where I trained and deployed [AnyParser](https://github.com/CambioML/any-parser), a vision-language model for document parsing, and built [Energent.ai](https://energent.ai), a computer-use agent sandbox. I studied Mathematics & Computer Science and Statistics at **UIUC** before that.
 
 These days I spend my time on three things:
 
