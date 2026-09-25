@@ -84,7 +84,7 @@ These days I spend my time on three things:
 - **Model training and alignment** - post-training LLMs and VLMs: training data curation, supervised fine-tuning, LoRA, and RL alignment with PPO, DPO, and GRPO in PyTorch and DeepSpeed.
 - **ML systems and inference** - serving models under production load with SGLang, vLLM, speculative decoding, quantization, Kubernetes, and AWS.
 
-**Graduating Dec 2026, open to full-time roles from Dec 2026.**
+**Graduating Dec 2026, open to full-time roles starting Jan 2027.**
 
 <div style="display:flex; flex-wrap:wrap; gap:0.6rem 1.4rem; margin-top:0.5rem; font-size:1rem;">
   <a href="mailto:b4yuan@ucsd.edu" style="display:flex; align-items:center; gap:0.4rem; text-decoration:none; opacity:0.8;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'"><i class="fa-solid fa-envelope"></i> Email</a>
@@ -110,7 +110,7 @@ These days I spend my time on three things:
     "url": "https://boqiny.github.io",
     "email": "mailto:b4yuan@ucsd.edu",
     "jobTitle": "Machine Learning Engineer",
-    "description": "Machine learning engineer who builds infrastructure for evaluating LLM agents: benchmarks, memory diagnostics, and evaluation harnesses. Also trains and serves models. Graduating December 2026, available for full-time roles from December 2026.",
+    "description": "Machine learning engineer who builds infrastructure for evaluating LLM agents: benchmarks, memory diagnostics, and evaluation harnesses. Also trains and serves models. Graduating December 2026, available for full-time roles starting January 2027.",
     "knowsAbout": [
       "LLM agents",
       "AI agent evaluation",
@@ -159,8 +159,8 @@ These days I spend my time on three things:
     ],
     "seeks": {
       "@type": "Demand",
-      "name": "Full-time roles starting December 2026 in LLM agent development and evaluation, model training and alignment, or ML systems and inference infrastructure",
-      "availabilityStarts": "2026-12"
+      "name": "Full-time roles starting January 2027 in LLM agent development and evaluation, model training and alignment, or ML systems and inference infrastructure",
+      "availabilityStarts": "2027-01"
     },
     "sameAs": [
       "https://github.com/boqiny",
