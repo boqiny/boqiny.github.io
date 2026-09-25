@@ -3,7 +3,7 @@
 > Machine learning engineer working across the LLM stack: long-horizon AI agent development and
 > evaluation, model training and alignment, and ML systems and inference optimization.
 > MS Computer Science at UC San Diego. Previously a full-time ML engineer at CambioML (YC S23).
-> Graduating December 2026. Available for full-time roles from December 2026.
+> Graduating December 2026. Available for full-time roles starting January 2027.
 
 Contact: b4yuan@ucsd.edu
 Site: https://boqiny.github.io
