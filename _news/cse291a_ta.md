@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-This fall, I'm a **Teaching Assistant** for **CSE 291A: Systems for LLMs and AI Agents** at UC San Diego.
+This fall, I'm a **Teaching Assistant** for **[CSE 291A: Systems for LLMs and AI Agents](https://cseweb.ucsd.edu/~yiying/cse291a-fall26/)** at UC San Diego.

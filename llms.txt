@@ -66,9 +66,9 @@ Google Scholar: https://scholar.google.com/citations?user=AglrzBgAAAAJ
   https://arxiv.org/abs/2603.02473
 - ClawTrace: Cost-Aware Tracing for LLM Agent Skill Distillation. ACM CAIS 2026 Workshop (Oral).
   https://arxiv.org/abs/2604.23853
-- SkillsBench: Benchmarking How Well Agent Skills Work Across Diverse Tasks.
+- SkillsBench: Benchmarking How Well Agent Skills Work Across Diverse Tasks. NeurIPS 2026.
   https://arxiv.org/abs/2602.12670
-- Agents' Last Exam. https://arxiv.org/abs/2606.05405
+- Agents' Last Exam. NeurIPS 2026. https://arxiv.org/abs/2606.05405
 - L-MARS: Legal Multi-Agent System with Agentic Search and Citation-Faithfulness Audit. ICML 2026
   Workshop AI4Law. https://arxiv.org/abs/2509.00761
 
