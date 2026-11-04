@@ -2,8 +2,9 @@ name: Update citations
 
 # Every 6 hours: re-read the Google Scholar profile into _data/citations.yml
 # and redeploy if any number changed. Google blocks some runner IPs but not
-# others, so several tries a day keep the numbers at most about a day old. Commits made with GITHUB_TOKEN do not trigger
-# the push-based deploy, so this dispatches deploy.yml explicitly.
+# others, so several tries a day keep the numbers at most about a day old.
+# Commits made with GITHUB_TOKEN do not trigger the push-based deploy, so
+# this dispatches deploy.yml explicitly.
 on:
   schedule:
     - cron: "17 */6 * * *"
