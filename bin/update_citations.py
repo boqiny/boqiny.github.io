@@ -33,7 +33,8 @@ def fetch(url, tries=3):
                 body = r.read().decode("utf-8", "replace")
             if "gsc_a_tr" in body:
                 return body
-            print(f"attempt {i + 1}: no publication rows (blocked or captcha?)", file=sys.stderr)
+            title = re.search(r"<title>(.*?)</title>", body, re.S)
+            print(f"attempt {i + 1}: no publication rows; got {r.status} {r.url[:80]!r}, title {title.group(1).strip()[:80] if title else None!r}", file=sys.stderr)
         except Exception as e:  # network errors, 429s
             print(f"attempt {i + 1}: {e}", file=sys.stderr)
         time.sleep(10 * (i + 1))
