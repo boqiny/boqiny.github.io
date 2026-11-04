@@ -1,0 +1,12 @@
+{%- comment -%}
+  "· Cited by N" for one bib entry, appended to the venue line. Data comes from
+  _data/citations.yml (bin/update_citations.py). Renders nothing for 0 cites.
+{%- endcomment -%}
+{%- if entry.google_scholar_id and site.data.citations -%}
+  {%- assign _key = site.data.citations.metadata.user | append: ':' | append: entry.google_scholar_id -%}
+  {%- assign _p = site.data.citations.papers[_key] -%}
+  {%- if _p and _p.citations > 0 -%}
+    {%- assign _asof = site.data.citations.metadata.last_updated | date: '%b %-d, %Y' -%}
+    <span class="cite-inline"><a href="{{ _p.cited_by_url }}" target="_blank" rel="noopener" title="Google Scholar citations, as of {{ _asof }}">Cited by {{ _p.citations }}</a></span>
+  {%- endif -%}
+{%- endif -%}
