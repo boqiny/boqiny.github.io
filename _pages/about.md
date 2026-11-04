@@ -10,6 +10,7 @@ profile:
   image_circular: false
   more_info: >
     <p>b4yuan[at]ucsd.edu</p>
+  scholar_stats: true
 
 selected_papers: true
 social: false
@@ -74,6 +75,73 @@ latest_posts:
   .post .news table td {
     padding: 0.2rem 0;
   }
+  /* News: the newest 3 items show; older ones scroll inside the box. The
+     native scrollbar is hidden (macOS, iOS and Firefox only show it while
+     scrolling) and replaced by a quiet always-visible indicator: a hairline
+     with a slim pill thumb, inset to span the text rather than the box. */
+  .post .news {
+    position: relative;
+  }
+  /* Width is set in the script below: just wide enough for the newest item to
+     fit on one line, so the indicator sits close to the news text. */
+  .post .news-scroll.is-scrollable {
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding-right: 1.5rem;
+    scrollbar-width: none;
+  }
+  .post .news-scroll.is-scrollable::-webkit-scrollbar {
+    display: none;
+  }
+  .news-rail {
+    position: absolute;
+    right: 0;
+    width: 11px;
+    cursor: pointer;
+  }
+  .news-rail::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 5px;
+    width: 1px;
+    background: color-mix(in srgb, var(--global-text-color) 12%, transparent);
+  }
+  .news-thumb {
+    position: absolute;
+    top: 0;
+    left: 4px;
+    width: 3px;
+    border-radius: 3px;
+    background: color-mix(in srgb, var(--global-text-color) 38%, transparent);
+    transition:
+      width 0.15s ease,
+      left 0.15s ease,
+      background-color 0.15s ease;
+  }
+  .news-rail:hover .news-thumb,
+  .news-rail.dragging .news-thumb {
+    left: 3px;
+    width: 5px;
+    background: var(--global-theme-color);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .news-thumb {
+      transition: none;
+    }
+  }
+  /* Scholar totals under the email (rendered in _layouts/about.liquid). */
+  .profile .gs-side {
+    font-variant-numeric: tabular-nums;
+  }
+  .profile .gs-side .gs-h {
+    color: color-mix(in srgb, var(--global-text-color) 62%, var(--global-bg-color));
+  }
+  .profile .gs-side .gs-h::before {
+    content: "\00B7";
+    margin: 0 0.45em;
+  }
 </style>
 
 I'm a Master's student in Computer Science at **UC San Diego**, where I work with [Prof. Jishen Zhao](https://cseweb.ucsd.edu/~jzhao/)'s STABLE Lab on **agent memory** and **ML systems**. I spent summer 2026 as a Software Engineer Intern (AI Agent) at [Moody's Analytics](https://www.moodys.com/){:.hl} in San Francisco, working on knowledge iteration and evaluation for their banking agent. Before UCSD, I was the founding Machine Learning Engineer at [CambioML (YC S23)](https://www.cambioml.com/en){:.hl} for over a year, where I trained and deployed [AnyParser](https://github.com/CambioML/any-parser), a vision-language model for document parsing, and built [Energent.ai](https://energent.ai), a computer-use agent sandbox. I studied Mathematics & Computer Science and Statistics at **UIUC** before that.
@@ -96,7 +164,82 @@ These days I spend my time on three things:
 
 <h2 style="margin-top: 2.5rem">News</h2>
 
-{% include news.liquid limit=true %}
+{% include news.liquid %}
+
+<script>
+  // Newest 3 news items visible; older ones scroll inside the box, which ends
+  // exactly after the 3rd item. The indicator on the right shows there is
+  // more; drag the thumb or click the line to move.
+  (function () {
+    var box = document.querySelector(".post .news-scroll");
+    var rows = box ? box.querySelectorAll("tr") : [];
+    if (rows.length <= 3) return;
+    box.classList.add("is-scrollable");
+
+    var INSET = 5; // px: span the text, not the row padding
+    var rail = document.createElement("div");
+    rail.className = "news-rail";
+    rail.setAttribute("aria-hidden", "true");
+    var thumb = document.createElement("div");
+    thumb.className = "news-thumb";
+    rail.appendChild(thumb);
+    box.after(rail);
+
+    function sync() {
+      var h = box.clientHeight - 2 * INSET, max = box.scrollHeight - box.clientHeight;
+      var th = Math.max(20, (h * box.clientHeight) / box.scrollHeight);
+      rail.style.top = box.offsetTop + INSET + "px";
+      rail.style.height = h + "px";
+      thumb.style.height = th + "px";
+      thumb.style.transform = "translateY(" + (max > 0 ? (box.scrollTop / max) * (h - th) : 0) + "px)";
+    }
+    var news = box.parentNode;
+    function fitWidth() {
+      // Narrowest box that keeps the newest item on one line (capped at the
+      // column width). Phones keep the full width.
+      news.style.maxWidth = "";
+      if (window.innerWidth < 576) return;
+      var cell = rows[0].cells[1], range = document.createRange();
+      cell.style.whiteSpace = "nowrap";
+      range.selectNodeContents(cell);
+      var textRight = range.getBoundingClientRect().right;
+      cell.style.whiteSpace = "";
+      var pad = parseFloat(getComputedStyle(box).paddingRight);
+      news.style.maxWidth = Math.ceil(textRight - news.getBoundingClientRect().left + pad + 4) + "px";
+    }
+    function fit() {
+      fitWidth();
+      // Rounded down so not a pixel of the 4th row shows.
+      box.style.maxHeight = Math.floor(rows[2].offsetTop + rows[2].offsetHeight) + "px";
+      sync();
+    }
+    box.addEventListener("scroll", sync, { passive: true });
+    window.addEventListener("resize", fit);
+    fit();
+
+    function scrollTo(clientY, grab) {
+      var r = rail.getBoundingClientRect(), th = thumb.offsetHeight;
+      var y = Math.min(Math.max(clientY - r.top - grab, 0), r.height - th);
+      box.scrollTop = (y / (r.height - th)) * (box.scrollHeight - box.clientHeight);
+    }
+    rail.addEventListener("pointerdown", function (e) {
+      e.preventDefault();
+      var t = thumb.getBoundingClientRect();
+      var grab = e.clientY >= t.top && e.clientY <= t.bottom ? e.clientY - t.top : thumb.offsetHeight / 2;
+      scrollTo(e.clientY, grab);
+      rail.classList.add("dragging");
+      rail.setPointerCapture(e.pointerId);
+      function move(ev) { scrollTo(ev.clientY, grab); }
+      function up() {
+        rail.classList.remove("dragging");
+        rail.removeEventListener("pointermove", move);
+        rail.removeEventListener("pointerup", up);
+      }
+      rail.addEventListener("pointermove", move);
+      rail.addEventListener("pointerup", up);
+    });
+  })();
+</script>
 
 <h2 style="margin-top: 2.5rem"><a href="{{ '/experience/' | relative_url }}" style="color: inherit">Recent Experience</a></h2>
 

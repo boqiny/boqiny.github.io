@@ -34,6 +34,11 @@ layout: default
         {% endif %}
         {% if page.profile.more_info %}
           <div class="more-info">{{ page.profile.more_info }}</div>
+          {% if page.profile.scholar_stats and site.data.citations %}
+            <div class="more-info gs-side">
+              <a href="https://scholar.google.com/citations?user={{ site.data.socials.scholar_userid }}" target="_blank" rel="noopener" title="Google Scholar, as of {{ site.data.citations.metadata.last_updated | date: '%b %-d, %Y' }}">{{ site.data.citations.metadata.total_citations }} citations</a><span class="gs-h">h-index {{ site.data.citations.metadata.h_index }}</span>
+            </div>
+          {% endif %}
         {% endif %}
       </div>
     {% endif %}

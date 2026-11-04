@@ -189,3 +189,24 @@
 .citation-number {
   color: var(--global-theme-color);
 }
+
+// Google Scholar "· Cited by N" on the venue line (data: _data/citations.yml,
+// markup: _includes/scholar_cites.liquid). Upright and muted so it reads as a
+// bibliographic fact, not another button; accent only on hover.
+.publications .cite-inline {
+  font-style: normal;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  &::before {
+    content: "\00B7";
+    margin: 0 0.45em;
+    color: color-mix(in srgb, var(--global-text-color) 62%, var(--global-bg-color));
+  }
+  a {
+    color: color-mix(in srgb, var(--global-text-color) 62%, var(--global-bg-color));
+    &:hover {
+      color: var(--global-theme-color);
+      text-decoration: underline;
+    }
+  }
+}
