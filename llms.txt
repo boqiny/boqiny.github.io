@@ -45,7 +45,7 @@ Google Scholar: https://scholar.google.com/citations?user=AglrzBgAAAAJ
   that reached 1,000+ registered users. Built a computer-use gym: a reproducible desktop
   environment with defined tasks, where agent rollouts generate the trajectories used to evaluate
   and post-train CUA agents.
-- **UC San Diego, STABLE Lab** (2025 - present): MS Computer Science, agent memory and ML systems
+- **UC San Diego, STABLE Lab** (2025 - present): MS Computer Science, model training and ML systems
   research with Prof. Jishen Zhao.
 - **UIUC, Supercomputing System and AI Lab (SSAIL)** (Oct 2024 - Mar 2025): Research Assistant with
   Prof. Minjia Zhang. Extended DeepSpeed-Chat, which shipped with PPO only, to preference-based
