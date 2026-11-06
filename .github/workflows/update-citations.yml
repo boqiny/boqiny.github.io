@@ -1,8 +1,10 @@
 name: Update citations
 
 # Daily: re-read the Google Scholar profile into _data/citations.yml and
-# redeploy if any number changed. Google may block runner IPs (403); a blocked
-# run keeps the last numbers and only warns.
+# redeploy if any number changed. Scholar returns 403 to GitHub's servers, so
+# the fetch goes through SerpApi (key in the SERPAPI_KEY repo secret; one
+# lookup a day, well inside the free plan). A failed run keeps the last
+# numbers and only warns.
 # Commits made with GITHUB_TOKEN do not trigger the push-based deploy, so
 # this dispatches deploy.yml explicitly.
 on:
@@ -24,11 +26,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Google sometimes rate-limits runner IPs. A miss keeps the last good
-      # numbers and is only a warning; the next step fails if data goes stale.
+      # A miss keeps the last good numbers and is only a warning; the next
+      # step fails if the data goes stale.
       - name: Fetch Google Scholar profile
         id: fetch
         continue-on-error: true
+        env:
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
         run: python3 bin/update_citations.py
 
       - name: Warn on fetch failure, fail if data is over 3 weeks old

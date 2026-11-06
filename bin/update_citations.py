@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 """Refresh _data/citations.yml from the public Google Scholar profile.
 
-Google Scholar has no API, so this reads the profile page itself (standard
-library only). If the page is blocked or parses to nothing, the script exits
-non-zero and leaves the existing file untouched, so the site keeps showing the
-last good numbers.
+Google Scholar has no API. With SERPAPI_KEY set (the daily GitHub workflow
+sets it from a repo secret), the profile comes from SerpApi's Google Scholar
+Author API, because Scholar returns 403 to GitHub's servers. Without it, the
+script reads the profile page directly, which works from a home connection.
+Standard library only. If the fetch fails or parses to nothing, the script
+exits non-zero and leaves the existing file untouched, so the site keeps
+showing the last good numbers.
 
 Usage: python3 bin/update_citations.py [SCHOLAR_USER_ID]
 """
@@ -12,10 +15,12 @@ Usage: python3 bin/update_citations.py [SCHOLAR_USER_ID]
 import datetime
 import html
 import json
+import os
 import pathlib
 import re
 import sys
 import time
+import urllib.parse
 import urllib.request
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -79,6 +84,42 @@ def parse(page):
     }
 
 
+def from_serpapi(key):
+    query = urllib.parse.urlencode({
+        "engine": "google_scholar_author", "author_id": USER, "hl": "en",
+        "num": 100, "sort": "pubdate", "api_key": key,
+    })
+    try:
+        with urllib.request.urlopen("https://serpapi.com/search.json?" + query, timeout=60) as r:
+            d = json.load(r)
+    except Exception as e:  # never print the URL: it carries the key
+        sys.exit(f"SerpApi request failed ({type(e).__name__}); keeping the existing citations.yml")
+    if d.get("error") or not d.get("articles"):
+        sys.exit(f"SerpApi returned no articles ({d.get('error')}); keeping the existing citations.yml")
+    table = {k: v["all"] for row in d["cited_by"]["table"] for k, v in row.items()}
+    papers = {}
+    for a in d["articles"]:
+        cited = a.get("cited_by") or {}
+        n = cited.get("value") or 0
+        papers[a["citation_id"]] = {
+            "title": a["title"],
+            "year": int(a["year"]) if a.get("year") else None,
+            "citations": n,
+            "cited_by_url": cited.get("link") if n else None,
+        }
+    return {
+        "metadata": {
+            "user": USER,
+            "last_updated": datetime.date.today().isoformat(),
+            "total_citations": table["citations"],
+            "h_index": table["h_index"],
+            "i10_index": table["i10_index"],
+            "by_year": {g["year"]: g["citations"] for g in d["cited_by"].get("graph", [])},
+        },
+        "papers": papers,
+    }
+
+
 def to_yaml(data):
     # Every scalar is JSON-encoded, which is valid YAML and needs no PyYAML.
     j = json.dumps
@@ -96,7 +137,8 @@ def to_yaml(data):
 
 
 def main():
-    data = parse(fetch(URL))
+    key = os.environ.get("SERPAPI_KEY")
+    data = from_serpapi(key) if key else parse(fetch(URL))
     new = to_yaml(data)
     old = OUT.read_text() if OUT.exists() else ""
     # Ignore the date line when deciding whether anything changed.
