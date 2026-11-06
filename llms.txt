@@ -47,7 +47,7 @@ Google Scholar: https://scholar.google.com/citations?user=AglrzBgAAAAJ
   and post-train CUA agents.
 - **Inspur Group** (May 2023 - Aug 2023): ML Engineer Intern. YOLOv7 detection and pose estimation,
   TensorRT inference acceleration.
-- **UC San Diego, STABLE Lab** (2025 - present): MS Computer Science, agent memory and ML systems
+- **UC San Diego, STABLE Lab** (2025 - present): MS Computer Science, model training and ML systems
   research with Prof. Jishen Zhao.
 - **UIUC, Supercomputing System and AI Lab (SSAIL)** (Oct 2024 - Mar 2025): Research Assistant with
   Prof. Minjia Zhang. Extended DeepSpeed-Chat, which shipped with PPO only, to preference-based
