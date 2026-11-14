@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: Building the evaluation, post-training, and serving infrastructure that makes long-horizon LLM agents work
+subtitle: Research Engineer building the evaluation, post-training, and serving infrastructure that makes long-horizon LLM agents work
 
 profile:
   align: right
@@ -148,7 +148,7 @@ These days I spend my time on three things:
 - **Model training and alignment** - post-training LLMs and VLMs: training data curation, supervised fine-tuning, LoRA, and RL alignment in PyTorch and DeepSpeed.
 - **ML systems and inference** - serving models under production load with SGLang, vLLM, speculative decoding, quantization, Kubernetes, and AWS. I contributed to [GuideLLM](https://github.com/vllm-project/guidellm) (vLLM).
 
-**Graduating Dec 2026, open to full-time roles starting Jan 2027.**
+**Graduating Dec 2026, open to full-time Research Engineer roles starting Jan 2027.**
 
 <div style="display:flex; flex-wrap:wrap; gap:0.6rem 1.4rem; margin-top:0.5rem; font-size:1rem;">
   <a href="mailto:b4yuan@ucsd.edu" style="display:flex; align-items:center; gap:0.4rem; text-decoration:none; opacity:0.8;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'"><i class="fa-solid fa-envelope"></i> Email</a>
