@@ -1,0 +1,166 @@
+{%- comment -%}
+  /contributions/: merged pull requests from _data/open_source.yml, newest
+  first, one ruled row per PR. The change is the headline; the project it
+  went into, the PR number and the merge month are secondary.
+{%- endcomment -%}
+{%- assign contributions = site.data.open_source | sort: 'merged' | reverse -%}
+
+<style>
+  .oss {
+    --oss-muted: color-mix(in srgb, var(--global-text-color) 60%, var(--global-bg-color));
+    --oss-rule: color-mix(in srgb, var(--global-text-color) 11%, transparent);
+    list-style: none;
+    margin: 2.25rem 0 0;
+    padding: 0;
+    border-bottom: 1px solid var(--oss-rule);
+  }
+  .oss-item {
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr) auto;
+    grid-template-areas:
+      "logo title date"
+      "logo meta meta"
+      "logo impact impact";
+    column-gap: 1.25rem;
+    padding: 1.75rem 0;
+    border-top: 1px solid var(--oss-rule);
+  }
+  .oss a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+  .oss a.oss-num {
+    margin-left: 0.45rem;
+    color: var(--oss-muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .oss a:hover,
+  .oss a.oss-num:hover {
+    color: var(--global-theme-color);
+  }
+  .oss-logo {
+    grid-area: logo;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid var(--oss-rule);
+    margin-top: 0.15rem;
+  }
+  .oss-logo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 5px;
+  }
+  .oss-logo--fill {
+    border-color: transparent;
+  }
+  .oss-logo--fill img {
+    padding: 0;
+    object-fit: cover;
+  }
+  .oss-title {
+    grid-area: title;
+    margin: 0;
+    font-size: 1.08rem;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: -0.005em;
+  }
+  .oss-date {
+    grid-area: date;
+    align-self: baseline;
+    font-size: 0.82rem;
+    color: var(--oss-muted);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .oss-date i {
+    margin-right: 0.4rem;
+    font-size: 0.72rem;
+    color: var(--global-theme-color);
+  }
+  .oss-meta {
+    grid-area: meta;
+    margin: 0.2rem 0 0;
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+  .oss-impact {
+    grid-area: impact;
+    margin: 0.6rem 0 0;
+    max-width: 64ch;
+    font-size: 0.92rem;
+    line-height: 1.58;
+    color: color-mix(in srgb, var(--global-text-color) 80%, var(--global-bg-color));
+  }
+  .oss-more {
+    margin: 1.25rem 0 3rem;
+    font-size: 0.9rem;
+    color: var(--oss-muted);
+  }
+  .oss-more a {
+    color: inherit;
+  }
+  .oss-more a:hover {
+    color: var(--global-theme-color);
+  }
+  /* Phones: the logo shrinks into the project line so the headline and the
+     paragraph get the full width. */
+  @media (max-width: 575px) {
+    .oss-item {
+      grid-template-columns: 22px minmax(0, 1fr) auto;
+      grid-template-areas:
+        "logo meta date"
+        "title title title"
+        "impact impact impact";
+      column-gap: 0.6rem;
+      align-items: center;
+      padding: 1.4rem 0;
+    }
+    .oss-logo {
+      width: 22px;
+      height: 22px;
+      border-radius: 5px;
+      margin-top: 0;
+    }
+    .oss-logo img {
+      padding: 2px;
+    }
+    .oss-logo--fill img {
+      padding: 0;
+    }
+    .oss-meta {
+      margin-top: 0;
+    }
+    .oss-date {
+      align-self: center;
+    }
+    .oss-title {
+      margin-top: 0.7rem;
+    }
+    .oss-impact {
+      margin-top: 0.45rem;
+    }
+  }
+</style>
+
+<ol class="oss">
+  {% for c in contributions %}
+    {%- assign repo_url = 'https://github.com/' | append: c.repo -%}
+    {%- assign pr_url = repo_url | append: '/pull/' | append: c.pr -%}
+    <li class="oss-item">
+      <a class="oss-logo{% if c.logo_fill %} oss-logo--fill{% endif %}" href="{{ repo_url }}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="{{ c.logo | prepend: '/assets/img/logos/' | relative_url }}" alt=""></a>
+      <h2 class="oss-title"><a href="{{ pr_url }}" target="_blank" rel="noopener">{{ c.title }}</a></h2>
+      <time class="oss-date" datetime="{{ c.merged }}" title="Merged {{ c.merged | date: '%b %-d, %Y' }}"><i class="fa-solid fa-code-merge" aria-hidden="true"></i><span class="sr-only">Merged </span>{{ c.merged | date: '%b %Y' }}</time>
+      <p class="oss-meta"><a href="{{ repo_url }}" target="_blank" rel="noopener">{{ c.project }}</a><a class="oss-num" href="{{ pr_url }}" target="_blank" rel="noopener">#{{ c.pr }}</a></p>
+      <p class="oss-impact">{{ c.impact }}</p>
+    </li>
+  {% endfor %}
+</ol>
+
+<p class="oss-more">More on <a href="https://github.com/boqiny" target="_blank" rel="noopener">GitHub</a>.</p>
