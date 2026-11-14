@@ -146,7 +146,7 @@ These days I spend my time on three things:
 
 - **Agent evaluation and benchmarks** - benchmarks and diagnostics for **long-horizon** LLM agents: [SkillsBench](https://arxiv.org/abs/2602.12670), [Agents' Last Exam](https://arxiv.org/abs/2606.05405), [AMA-Bench](https://github.com/AMA-Bench/AMA-Bench){:.hl} (ICML 2026), and [memory-probe](https://github.com/boqiny/memory-probe){:.hl}. I also contribute to open-source agentic benchmarks: [Harbor](https://github.com/harbor-framework/harbor){:.hl}, [Terminal-Bench](https://www.tbench.ai/), and [QF-Bench](https://qfbench.com/).
 - **Model training and alignment** - post-training LLMs and VLMs: training data curation, supervised fine-tuning, LoRA, and RL alignment with PPO, DPO, and GRPO in PyTorch and DeepSpeed.
-- **ML systems and inference** - serving models under production load with SGLang, vLLM, speculative decoding, quantization, Kubernetes, and AWS. I contributed to [GuideLLM](https://github.com/vllm-project/guidellm), vLLM's inference benchmarking tool.
+- **ML systems and inference** - serving models under production load with SGLang, vLLM, speculative decoding, quantization, Kubernetes, and AWS. I contributed to [GuideLLM](https://github.com/vllm-project/guidellm) (vLLM).
 
 **Graduating Dec 2026, open to full-time roles starting Jan 2027.**
 
