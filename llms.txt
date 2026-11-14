@@ -56,6 +56,21 @@ Google Scholar: https://scholar.google.com/citations?user=AglrzBgAAAAJ
 - **UIUC** (2020 - 2024): BS in Mathematics & Computer Science and in Statistics. Research at NCSA and
   the Illinois Geometry Lab.
 
+## Open source
+
+Merged pull requests to external projects (https://boqiny.github.io/contributions/):
+
+- vLLM GuideLLM (vllm-project/guidellm), PR #1455, Nov 2026: benchmark sweeps
+  resent the first benchmark's synthetic images and videos, so vLLM served them
+  from its multimodal cache and later runs looked faster; per-benchmark seeding
+  cut cache hits from 480 of 720 to 0. https://github.com/vllm-project/guidellm/pull/1455
+- Harbor (harbor-framework/harbor), PR #1635, Jul 2026: LoCoMo long-term memory
+  benchmark adapter with a parity study (all six metrics match the original).
+  https://github.com/harbor-framework/harbor/pull/1635
+- Terminal-Bench (harbor-framework/terminal-bench-1), PR #701, Aug 2025:
+  gomoku-planner task (read a Gomoku board from an image, block five-in-a-row).
+  https://github.com/harbor-framework/terminal-bench-1/pull/701
+
 ## Selected publications
 
 - AMA-Bench: Evaluating Long-Horizon Memory for Agentic Applications. ICML 2026.
