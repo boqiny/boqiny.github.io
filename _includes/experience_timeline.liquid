@@ -75,6 +75,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    /* Keeps a short entry's tile clear of the next one. */
+    margin-bottom: 1.75rem;
+  }
+  .tl-item:last-child .tl-logo {
+    margin-bottom: 0.5rem;
   }
   .tl-logo img {
     width: 100%;
@@ -223,6 +228,7 @@
     <div class="tl-body">
       <p class="tl-role">Research Intern</p>
       <p class="tl-company"><a href="https://www.datologyai.com/" target="_blank">DatologyAI</a></p>
+      <p class="tl-meta">Automated data curation for model training</p>
     </div>
   </div>
 
