@@ -82,7 +82,7 @@ latest_posts:
   .post .news {
     position: relative;
   }
-  /* Width is set in the script below: just wide enough for the newest item to
+  /* Width is set in the script below: just wide enough for the longest item to
      fit on one line, so the indicator sits close to the news text. */
   .post .news-scroll.is-scrollable {
     overflow-y: auto;
@@ -191,15 +191,18 @@ These days I spend my time on three things:
     }
     var news = box.parentNode;
     function fitWidth() {
-      // Narrowest box that keeps the newest item on one line (capped at the
+      // Narrowest box that keeps the longest item on one line (capped at the
       // column width). Phones keep the full width.
       news.style.maxWidth = "";
       if (window.innerWidth < 576) return;
-      var cell = rows[0].cells[1], range = document.createRange();
-      cell.style.whiteSpace = "nowrap";
-      range.selectNodeContents(cell);
-      var textRight = range.getBoundingClientRect().right;
-      cell.style.whiteSpace = "";
+      var textRight = 0, range = document.createRange();
+      for (var i = 0; i < rows.length; i++) {
+        var cell = rows[i].cells[1];
+        cell.style.whiteSpace = "nowrap";
+        range.selectNodeContents(cell);
+        textRight = Math.max(textRight, range.getBoundingClientRect().right);
+        cell.style.whiteSpace = "";
+      }
       var pad = parseFloat(getComputedStyle(box).paddingRight);
       news.style.maxWidth = Math.ceil(textRight - news.getBoundingClientRect().left + pad + 4) + "px";
     }
@@ -212,6 +215,9 @@ These days I spend my time on three things:
     box.addEventListener("scroll", sync, { passive: true });
     window.addEventListener("resize", fit);
     fit();
+    // Measure again whenever the rows reflow (web fonts arriving, the column
+    // changing width), so the box always ends after the 3rd item.
+    if (window.ResizeObserver) new ResizeObserver(fit).observe(box.querySelector("table"));
 
     function scrollTo(clientY, grab) {
       var r = rail.getBoundingClientRect(), th = thumb.offsetHeight;
